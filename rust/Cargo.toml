@@ -1,0 +1,26 @@
+[workspace]
+members = [
+    "hanzo-tools",
+    # "autogui",  # TODO: add when ready
+    # "blockchain",
+    # "vector-store", 
+    # "file-system",
+    # "web-search",
+    # "code-execution",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Hanzo AI"]
+license = "MIT"
+
+[workspace.dependencies]
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+log = "0.4"

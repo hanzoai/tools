@@ -1,0 +1,38 @@
+[package]
+name = "hanzo-tools"
+version = "3.0.0"
+edition = "2021"
+authors = ["Hanzo AI"]
+license = "MIT"
+description = "Unified tool registry for Hanzo MCP - one and exactly one way to do everything"
+repository = "https://github.com/hanzoai/tools"
+keywords = ["mcp", "tools", "ai", "hanzo"]
+categories = ["development-tools", "api-bindings"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+log = "0.4"
+
+# Optional dependencies for specific tool categories
+reqwest = { version = "0.12", optional = true }
+git2 = { version = "0.18", optional = true }
+walkdir = { version = "2", optional = true }
+regex = { version = "1", optional = true }
+which = { version = "6", optional = true }
+
+[features]
+default = ["all"]
+all = ["filesystem", "shell", "git", "search", "network"]
+filesystem = ["walkdir"]
+shell = ["which"]
+git = ["git2"]
+search = ["regex", "walkdir"]
+network = ["reqwest"]
+
+[lib]
+name = "hanzo_tools"
+path = "src/lib.rs"
