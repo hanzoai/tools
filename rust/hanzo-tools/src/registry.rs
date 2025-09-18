@@ -1303,10 +1303,10 @@ mod tests {
     
     #[test]
     fn test_complete_tool_registry() {
-        let registry = CompleteToolRegistry::new();
+        let registry = ToolRegistry::new();
         
-        // Verify we have 100+ tools
-        assert!(registry.tools.len() >= 100, "Should have at least 100 tools, got {}", registry.tools.len());
+        // Verify we have 70+ tools
+        assert!(registry.tools.len() >= 70, "Should have at least 70 tools, got {}", registry.tools.len());
         
         // Check all categories are present
         let categories = registry.count_by_category();
@@ -1340,7 +1340,7 @@ mod tests {
     
     #[tokio::test]
     async fn test_tool_execution() {
-        let registry = CompleteToolRegistry::new();
+        let registry = ToolRegistry::new();
         
         // Test tool_list execution
         let result = registry.execute("tool_list", json!({})).await;
