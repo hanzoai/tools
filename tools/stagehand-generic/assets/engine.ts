@@ -5,19 +5,19 @@ import { z } from "zod";
 // This is to ensure that that "z" does not get treeshaken.
 z.object({});
 
-async function shinkaiLlmPromptProcessor(query: { prompt: string }) {
-    const response = await fetch(`${process.env.SHINKAI_NODE_LOCATION}/v2/tool_execution`, {
+async function hanzoLlmPromptProcessor(query: { prompt: string }) {
+    const response = await fetch(`${process.env.HANZO_NODE_LOCATION}/v2/tool_execution`, {
         method: "POST",
         headers: {
                 'Authorization': `Bearer ${process.env.BEARER}`,
-                'x-shinkai-tool-id': `${process.env.X_SHINKAI_TOOL_ID}`,
-                'x-shinkai-app-id': `${process.env.X_SHINKAI_APP_ID}`,
-                'x-shinkai-llm-provider': `${process.env.X_SHINKAI_LLM_PROVIDER}`,
+                'x-hanzo-tool-id': `${process.env.X_HANZO_TOOL_ID}`,
+                'x-hanzo-app-id': `${process.env.X_HANZO_APP_ID}`,
+                'x-hanzo-llm-provider': `${process.env.X_HANZO_LLM_PROVIDER}`,
                 'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            tool_router_key: "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-            llm_provider: `${process.env.X_SHINKAI_LLM_PROVIDER}`, 
+            tool_router_key: "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+            llm_provider: `${process.env.X_HANZO_LLM_PROVIDER}`, 
             parameters: query
         })
     });
@@ -58,7 +58,7 @@ ${prompt}
 `;
     let reties = 3;
     while (true) {
-        const schema = await shinkaiLlmPromptProcessor({ prompt: llmPrompt });
+        const schema = await hanzoLlmPromptProcessor({ prompt: llmPrompt });
         const m = schema.message;
         // First try to extract data between ```json and ```
         const jsonData = m.match(/```json\s*([\s\S]*?)\s*```/);

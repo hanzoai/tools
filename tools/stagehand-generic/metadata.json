@@ -1,5 +1,5 @@
 {
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "runner": "any",
   "operating_system": ["linux", "macos", "windows"],
   "tool_set": "",
@@ -77,7 +77,7 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_typescript_unsafe_processor"
+    "local:::__official_hanzo:::hanzo_typescript_unsafe_processor"
   ],
   "version": "1"
 }

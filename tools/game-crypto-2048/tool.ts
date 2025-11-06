@@ -1,4 +1,4 @@
-import { shinkaiTypescriptUnsafeProcessor } from "./shinkai-local-tools.ts";
+import { hanzoTypescriptUnsafeProcessor } from "./hanzo-local-tools.ts";
 
 const get_ts_code = () => {
   return `
@@ -142,7 +142,7 @@ const get_ts_package = () => {
     "license": "ISC",
     "description": "",
     "dependencies": {
-      "@browserbasehq/stagehand": "https://github.com/dcspark/stagehand",
+      "@browserbasehq/stagehand": "https://github.com/hanzoai/stagehand",
       "sharp": "^0.33.5",
       "json-schema-to-zod": "^2.6.0",
       "zod": "^3.24.1"
@@ -151,7 +151,7 @@ const get_ts_package = () => {
 }
 
 export async function run(config: any, parameters: any) {
-    return await shinkaiTypescriptUnsafeProcessor({
+    return await hanzoTypescriptUnsafeProcessor({
         code: get_ts_code(),
         package: get_ts_package(),
         parameters,

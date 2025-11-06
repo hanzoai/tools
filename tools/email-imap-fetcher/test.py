@@ -7,7 +7,7 @@ async def test_imap_connection():
     # Create a CONFIG instance with fake credentials
     config = CONFIG()
     config.imap_server = "imap.fakeemail.com"  # Replace with a valid IMAP server for testing
-    config.username = "shinkai.dev@fakeemail.com"  # Fake username
+    config.username = "hanzo.dev@fakeemail.com"  # Fake username
     config.password = "fakepassword"  # Fake password
     config.port = 993  # Common port for IMAPS
     config.ssl = True  # Use SSL

@@ -6,7 +6,7 @@ async def test_email_sender():
     config = CONFIG()
     config.smtp_server = "smtp.fakeemail.com"  # Replace with a valid SMTP server for testing
     config.port = 465  # Common port for SMTP with STARTTLS
-    config.sender_email = "shinkai.dev@fakeemail.com"  # Fake sender email
+    config.sender_email = "hanzo.dev@fakeemail.com"  # Fake sender email
     config.sender_password = "fakepassword" # Fake password
     config.ssl = True  # Set to True if you want to test SSL
 

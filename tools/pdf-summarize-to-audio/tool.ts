@@ -1,4 +1,4 @@
-import { shinkaiLlmPromptProcessor, elevenLabsTextToSpeech, pdfTextExtractor } from './shinkai-local-tools.ts';
+import { hanzoLlmPromptProcessor, elevenLabsTextToSpeech, pdfTextExtractor } from './hanzo-local-tools.ts';
 
 type CONFIG = {
   promptStructure: string;
@@ -20,8 +20,8 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
   const extractedTextResult = await pdfTextExtractor({ url: inputs.pdfURL });
   const pdfText = extractedTextResult.text; // Assume it returns a string with the PDF text
 
-  // Step 2: Summarize the text using ShinkaiLLPromptProcessor
-  const summarizedTextResult = await shinkaiLlmPromptProcessor({
+  // Step 2: Summarize the text using HanzoLLPromptProcessor
+  const summarizedTextResult = await hanzoLlmPromptProcessor({
     format:'text',
     prompt: `Summarize a text following these guidelines and structure:
     <guidelines>
@@ -36,7 +36,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
   const summarizedText = summarizedTextResult.message;
   let audiotext = summarizedText.replaceAll('*','').replaceAll('#',' ')
   if (config.voicePrompt && config.voicePrompt.length > 10) {
-    audiotext = (await shinkaiLlmPromptProcessor({
+    audiotext = (await hanzoLlmPromptProcessor({
       format: 'text',
       prompt: `Narrate a text using the following guidelines
       <guidelines>

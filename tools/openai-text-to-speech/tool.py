@@ -8,7 +8,7 @@ from typing import Optional, Literal
 import os
 import time
 import requests
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 
 class CONFIG:
     api_key: str

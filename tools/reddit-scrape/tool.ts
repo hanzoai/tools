@@ -286,13 +286,13 @@ Examples of use:
 
 const result = await run({
   action: 'subreddit',
-  subreddit: 'shinkai'
+  subreddit: 'hanzo'
 });
 
 
 const result = await run({
   action: 'post',
-  post_url: 'https://www.reddit.com/r/shinkai/comments/1234567890'
+  post_url: 'https://www.reddit.com/r/hanzo/comments/1234567890'
 });
 
 */

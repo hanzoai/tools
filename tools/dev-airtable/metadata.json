@@ -2,7 +2,7 @@
     "name": "Airtable Developer API",
     "homepage": "",
     "description": "Tool to make requests to the Airtable Developer API using OAuth for authentication.",
-    "author": "@@localhost.sep-shinkai",
+    "author": "@@localhost.sep-hanzo",
     "version": "1.0.0",
     "keywords": [
         "airtable",
@@ -52,7 +52,7 @@
             "name": "Airtable",
             "version": "2.0",
             "authorizationUrl": "https://airtable.com/oauth2/v1/authorize",
-            "redirectUrl": "https://secrets.shinkai.com/redirect",
+            "redirectUrl": "https://secrets.hanzo.com/redirect",
             "tokenUrl": "https://airtable.com/oauth2/v1/token",
             "clientId": "",
             "clientSecret": "",

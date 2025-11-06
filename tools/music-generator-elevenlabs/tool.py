@@ -17,13 +17,13 @@ from pathlib import Path
 
 # Try to import helper tools if available in environment
 try:
-    from shinkai_local_tools import youtube_audio_downloader, shinkai_llm_prompt_processor  # type: ignore
+    from hanzo_local_tools import youtube_audio_downloader, hanzo_llm_prompt_processor  # type: ignore
 except Exception:
     youtube_audio_downloader = None  # type: ignore
-    shinkai_llm_prompt_processor = None  # type: ignore
+    hanzo_llm_prompt_processor = None  # type: ignore
 
 try:
-    from shinkai_local_support import get_home_path  # type: ignore
+    from hanzo_local_support import get_home_path  # type: ignore
 except Exception:
     get_home_path = None  # type: ignore
 
@@ -179,7 +179,7 @@ async def _call_prompt_processor(user_query: str, mp3_path: Optional[str], llm_p
     Only supports mp3_path != None (used for audio-based composition_plan generation).
     If retry_feedback is provided it will be appended to the prompt to guide the LLM.
     """
-    if shinkai_llm_prompt_processor is None:
+    if hanzo_llm_prompt_processor is None:
         return None, None
 
     if not mp3_path:
@@ -204,7 +204,7 @@ async def _call_prompt_processor(user_query: str, mp3_path: Optional[str], llm_p
         request = {"prompt": prompt_text, "format": "text", "tools": []}
         if llm_provider:
             request["llm_provider"] = llm_provider
-        response = await shinkai_llm_prompt_processor(request)
+        response = await hanzo_llm_prompt_processor(request)
         message = response.get("message", "") if isinstance(response, dict) else str(response)
         # Try direct JSON parse
         try:
@@ -230,7 +230,7 @@ async def _generate_eleven_prompt_via_llm(user_query: str, mp3_path: Optional[st
     Ask the LLM to generate a single text prompt suitable for the Eleven Labs Music API.
     Return the generated prompt string, or None on failure.
     """
-    if shinkai_llm_prompt_processor is None:
+    if hanzo_llm_prompt_processor is None:
         return None
 
     if mp3_path:
@@ -262,7 +262,7 @@ async def _generate_eleven_prompt_via_llm(user_query: str, mp3_path: Optional[st
         request = {"prompt": instruction, "format": "text", "tools": []}
         if llm_provider:
             request["llm_provider"] = llm_provider
-        response = await shinkai_llm_prompt_processor(request)
+        response = await hanzo_llm_prompt_processor(request)
         message = response.get("message", "") if isinstance(response, dict) else str(response)
         # Clean message: strip surrounding whitespace and possible triple backticks
         msg = message.strip()

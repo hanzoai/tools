@@ -2,13 +2,13 @@
   "name": "iterm-read",
   "version": "1.0.0",
   "description": "Reads output from the active iTerm terminal.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "iterm",
     "terminal",
     "read",
     "automation",
-    "shinkai"
+    "hanzo"
   ],
   "runner": "any",
   "operating_system": [

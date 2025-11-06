@@ -1,4 +1,4 @@
-import { getAccessToken } from './shinkai-local-support.ts';
+import { getAccessToken } from './hanzo-local-support.ts';
 
 type CONFIG = {};
 type INPUTS = { url: string, method: string, body?: string, query_params?: string, headers?: Record<string, string> };

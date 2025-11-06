@@ -1,13 +1,13 @@
 {
   "name": "Illustrated Story Creator",
   "agent_id": "illustrated_story_creator",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/illustrated_story_creator",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/illustrated_story_creator",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "This Agent transforms a simple story idea into a complete, richly illustrated narrative.\n\nAfter expanding the story, it identifies the most compelling scenes and generates high-quality, stylistically consistent images for them using detailed prompts.The final output is a single, ready-to-read story where the generated images are seamlessly embedded within the text, bringing the tale to life.\n\nFeel free to edit the Agent to pick a different image generation tool.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::text_to_image_generator___getimg_ai_flux_1"
+    "local:::__official_hanzo:::text_to_image_generator___getimg_ai_flux_1"
   ],
   "debug_mode": false,
   "config": {

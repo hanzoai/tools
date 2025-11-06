@@ -1,13 +1,13 @@
 {
   "name": "Poster Creator",
   "agent_id": "poster_creator",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/poster_creator",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/poster_creator",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "Image generation Agent specialized in creating posters. Feel free to equip it with a different image generation tool.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::text_to_image_generator___getimg_ai_flux_1"
+    "local:::__official_hanzo:::text_to_image_generator___getimg_ai_flux_1"
   ],
   "debug_mode": false,
   "config": {

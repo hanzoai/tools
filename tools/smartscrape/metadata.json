@@ -11,7 +11,7 @@
     "formatted"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "extract_instructions": {
@@ -56,8 +56,8 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-    "local:::__official_shinkai:::download_pages"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+    "local:::__official_hanzo:::download_pages"
   ],
   "runner": "any",
   "operating_system": [

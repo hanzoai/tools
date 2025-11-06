@@ -1,11 +1,11 @@
 {
   "name": "PDF Whitepaper Analyzer",
   "homepage": null,
-  "author": "Shinkai",
+  "author": "Hanzo",
   "version": "1.0.0",
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-    "local:::__official_shinkai:::smart_search_engine"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+    "local:::__official_hanzo:::smart_search_engine"
   ],
   "runner": "any",
   "operating_system": ["linux", "macos", "windows"],

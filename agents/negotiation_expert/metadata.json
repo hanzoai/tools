@@ -1,8 +1,8 @@
 {
   "name": "Negotiation Expert",
   "agent_id": "negotiation_expert",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/negotiation_expert",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/negotiation_expert",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "This expert uses the core negotiation strategies of Chris Voss, William Ury, Roger Fisher, Herb Cohen, Jim Camp, and Stuart Diamond, highlighting their main teachings and real-world examples in a straightforward, practical way. It uses public available knowledge.",
   "knowledge": [],
   "storage_path": "",

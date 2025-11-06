@@ -2,7 +2,7 @@
     "name": "Play Crypto 2048",
     "homePage": "",
     "description": "Automatically play Crypto 2048",
-    "author": "@@official.shinkai",
+    "author": "@@official.hanzo",
     "version": "1.0.0",
     "keywords": [],
     "runner": "any",
@@ -26,7 +26,7 @@
     "sqlTables": [],
     "sqlQueries": [],
     "tools": [
-      "local:::__official_shinkai:::shinkai_typescript_unsafe_processor"
+      "local:::__official_hanzo:::hanzo_typescript_unsafe_processor"
     ],
     "oauth": []
   }

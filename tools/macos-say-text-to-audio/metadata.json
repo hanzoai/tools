@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "macOS Text-to-Speech",
   "description": "Speaks text aloud using macOS 'say' command. Available voices can be found by running 'say -v ?' in terminal, common voices include: Alex (default), Daniel, Karen, Samantha, Victoria",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "macos",
     "say",

@@ -1,5 +1,5 @@
 import { YoutubeTranscript } from 'npm:youtube-transcript@1.2.1';
-import { shinkaiLlmPromptProcessor } from './shinkai-local-tools.ts'
+import { hanzoLlmPromptProcessor } from './hanzo-local-tools.ts'
 
 // Tool does not need any configuration
 type CONFIG = Record<string, unknown>;
@@ -38,6 +38,6 @@ export const run: Run<CONFIG, INPUTS, OUTPUT> = async (
     Format the answer using markdown.
     Add markdown links referencing every section using this format https://www.youtube.com/watch?v={video_id}&t={offset} where 'offset' is a number and can be obtained from the transcription in csv format to generate the URL
   `;
-  const response = await shinkaiLlmPromptProcessor({ format: 'text', prompt: message })
+  const response = await hanzoLlmPromptProcessor({ format: 'text', prompt: message })
   return { summary: response.message }
 };

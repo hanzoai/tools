@@ -1,5 +1,5 @@
 import {
-  shinkaiLlmPromptProcessor,
+  hanzoLlmPromptProcessor,
   webSearch,
   wait15Seconds,
   youtubeSearch,
@@ -7,7 +7,7 @@ import {
   annaSArchiveEbookSearchWebScrappingBased as annaSearch,
   pubmedSearch,
   googleNewsSearch
-} from './shinkai-local-tools.ts';
+} from './hanzo-local-tools.ts';
 
 type Source = {
   title: string;
@@ -166,7 +166,7 @@ ${lastRaw ? `Reference of your last output (truncated): ${lastRaw.slice(0, 1000)
     const systemPrompt = attempt === 0 ? baseSystemPrompt : `${baseSystemPrompt}\n${retryHeader}`;
 
     try {
-      const llmRes = await shinkaiLlmPromptProcessor({
+      const llmRes = await hanzoLlmPromptProcessor({
         format: 'text',
         prompt: systemPrompt,
         llm_provider: llmProvider
@@ -514,7 +514,7 @@ Output ONLY valid JSON: { "indices": [0, 1] } // example, up to ${topPerQuery} i
 Data: ${JSON.stringify(allRes)}`;
 
     try {
-      const llmRes = await shinkaiLlmPromptProcessor({
+      const llmRes = await hanzoLlmPromptProcessor({
         format: 'text',
         prompt: selectPrompt,
         llm_provider: config.llm
@@ -587,7 +587,7 @@ Output ONLY valid JSON: { "final_best_sources": [ { "title": "string", "url": "s
 Data: ${combinedPreJson}`;
 
     try {
-      const llmRes = await shinkaiLlmPromptProcessor({
+      const llmRes = await hanzoLlmPromptProcessor({
         format: 'text',
         prompt: evalPrompt,
         llm_provider: config.llm

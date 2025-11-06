@@ -1,14 +1,14 @@
-// These values and function are defined by the shinkai-node.
+// These values and function are defined by the hanzo-node.
 
-export const author = "@@official.shinkai";
+export const author = "@@official.hanzo";
 
 export const systemTools = [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-    "local:::__official_shinkai:::shinkai_llm_map_reduce_processor",
-    "local:::__official_shinkai:::shinkai_sqlite_query_executor",
-    "local:::__official_shinkai:::shinkai_process_embeddings",
-    "local:::__official_shinkai:::shinkai_tool_config_updater",
-    "local:::__official_shinkai:::shinkai_typescript_unsafe_processor",
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+    "local:::__official_hanzo:::hanzo_llm_map_reduce_processor",
+    "local:::__official_hanzo:::hanzo_sqlite_query_executor",
+    "local:::__official_hanzo:::hanzo_process_embeddings",
+    "local:::__official_hanzo:::hanzo_tool_config_updater",
+    "local:::__official_hanzo:::hanzo_typescript_unsafe_processor",
   ];
 
 export function generateToolRouterKey(author: string, name: string): string {
@@ -44,10 +44,10 @@ export async function uploadAsset(
   }
 
 
-  const response = await fetch(`${Deno.env.get("SHINKAI_STORE_ADDR")}/store/products/${routerKey}/assets`, {
+  const response = await fetch(`${Deno.env.get("HANZO_STORE_ADDR")}/store/products/${routerKey}/assets`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${Deno.env.get("SHINKAI_STORE_TOKEN")}`,
+      'Authorization': `Bearer ${Deno.env.get("HANZO_STORE_TOKEN")}`,
     },
     body: formData,
   });

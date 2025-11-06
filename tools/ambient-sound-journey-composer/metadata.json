@@ -9,7 +9,7 @@
     "soudscape"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "llm_composition_retries": {
@@ -17,7 +17,7 @@
         "type": "string"
       },
       "llm_provider": {
-        "description": "Optional LLM to use for composition generation (overrides the LLM selected in the chat). Use LLM IDs as displayed in Shinkai (e.g., 'shinkai_free_trial', 'gpt_5_mini').",
+        "description": "Optional LLM to use for composition generation (overrides the LLM selected in the chat). Use LLM IDs as displayed in Hanzo (e.g., 'hanzo_free_trial', 'gpt_5_mini').",
         "type": "string"
       }
     },
@@ -76,7 +76,7 @@
       },
       "optional_output_path": {
         "type": "string",
-        "description": "Optional directory path to save the final MP3; defaults to Shinkai home directory. Keep empty to access the file from Shinkai."
+        "description": "Optional directory path to save the final MP3; defaults to Hanzo home directory. Keep empty to access the file from Hanzo."
       },
       "keep_intermediate_files": {
         "type": "boolean",
@@ -124,9 +124,9 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::ambient_sound_composer",
-    "local:::__official_shinkai:::mp3_concatenator",
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor"
+    "local:::__official_hanzo:::ambient_sound_composer",
+    "local:::__official_hanzo:::mp3_concatenator",
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor"
   ],
   "runner": "any",
   "operating_system": [

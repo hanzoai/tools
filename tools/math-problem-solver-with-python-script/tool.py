@@ -5,7 +5,7 @@
 # ///
 
 from typing import Any, Optional, Dict
-from shinkai_local_tools import shinkai_llm_prompt_processor
+from hanzo_local_tools import hanzo_llm_prompt_processor
 import re
 
 class CONFIG:
@@ -65,7 +65,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
         }
 
         try:
-            response = await shinkai_llm_prompt_processor(processor_input)
+            response = await hanzo_llm_prompt_processor(processor_input)
             raw_script = response.get("message", "").strip()
             if not raw_script:
                 raise ValueError("LLM prompt processor returned empty script.")
@@ -118,7 +118,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
         }
 
         try:
-            summary_response = await shinkai_llm_prompt_processor(summary_input)
+            summary_response = await hanzo_llm_prompt_processor(summary_input)
             text_result = summary_response.get("message", "").strip()
             output.text_result = text_result if text_result else None
         except Exception:

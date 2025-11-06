@@ -1,7 +1,7 @@
 {
     "activated": false,
     "assets": [],
-    "author": "@@official.sep-shinkai",
+    "author": "@@official.sep-hanzo",
     "name": "Linear Fetch Issues By Team",
     "description": "Fetches open issues from a Linear team. It implements pagination",
     "version": "1.0.0",

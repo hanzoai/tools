@@ -1,8 +1,8 @@
 {
     "name": "Perplexity",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/perplexity/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/perplexity/README.md",
     "description": "Searches the internet using Perplexity",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "version": "1.0.0",
     "keywords": [
       "perplexity",

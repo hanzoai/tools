@@ -1,13 +1,13 @@
 {
   "name": "Math problem solver",
   "agent_id": "math_problem_solver",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/math_problem_solver",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/math_problem_solver",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "Resolves math problems by breaking them down into multiple steps, and performing calculations using a python script creator and executor tool.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::math_problem_solver___with_python_script"
+    "local:::__official_hanzo:::math_problem_solver___with_python_script"
   ],
   "debug_mode": false,
   "config": {

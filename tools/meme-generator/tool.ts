@@ -1,5 +1,5 @@
-import { shinkaiLlmPromptProcessor } from './shinkai-local-tools.ts';
-import { getHomePath, getAssetPaths } from './shinkai-local-support.ts';
+import { hanzoLlmPromptProcessor } from './hanzo-local-tools.ts';
+import { getHomePath, getAssetPaths } from './hanzo-local-support.ts';
 
 import axios from 'npm:axios';
 import * as path from "jsr:@std/path";
@@ -278,7 +278,7 @@ async function selectTemplate(joke: string, templates: { id: string, name: strin
 
   while (retries < 3) {
 
-    const result = await shinkaiLlmPromptProcessor({ prompt, format: 'text' });
+    const result = await hanzoLlmPromptProcessor({ prompt, format: 'text' });
     console.log('[MEME GENERATOR] result:', result);
 
     const check = async (s: string): Promise<Record<`box + ${string}`, string> & { content: string, template_name: string, boxCount: number }> => {

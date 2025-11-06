@@ -4,7 +4,7 @@ import { addExtra } from "npm:puppeteer-extra@3.3.6";
 import rebrowserPuppeteer from "npm:rebrowser-puppeteer@23.10.1";
 import StealthPlugin from "npm:puppeteer-extra-plugin-stealth@2.11.2";
 
-import { getHomePath } from "./shinkai-local-support.ts";
+import { getHomePath } from "./hanzo-local-support.ts";
 
 type Configurations = {
   chromePath?: string;

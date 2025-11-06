@@ -1,10 +1,10 @@
 import {
   googleSearch,
   duckduckgoSearch,
-  shinkaiLlmPromptProcessor,
-  shinkaiLlmMapReduceProcessor,
+  hanzoLlmPromptProcessor,
+  hanzoLlmMapReduceProcessor,
   downloadPages,
-} from './shinkai-local-tools.ts';
+} from './hanzo-local-tools.ts';
 
 type CONFIG = {
   searchEngineApiKey?: string;
@@ -324,7 +324,7 @@ const ProcessQuestionError = (step: string, error: Error): string =>
 
 async function conversionToSearchQuery(question: string): Promise<SearchQueryConversion> {
   const prompt = searchEngineQueryGenerator(question);
-  const optimizedQueryResult = await shinkaiLlmPromptProcessor({ format: 'text' , prompt });
+  const optimizedQueryResult = await hanzoLlmPromptProcessor({ format: 'text' , prompt });
   try {
     const result = JSON.parse(optimizedQueryResult.message.trim()) as SearchQueryConversion;
     return result;
@@ -431,7 +431,7 @@ export async function run(
         url: smartSearchSource.url,
         id: smartSearchSource.id,
       }
-      const statementString = await shinkaiLlmMapReduceProcessor({ prompt: statementExtract(question, sourceData), data: source as string });
+      const statementString = await hanzoLlmMapReduceProcessor({ prompt: statementExtract(question, sourceData), data: source as string });
       const cleanStatementString = tryToExtractJSON(statementString.response)
       try { 
         const statement = JSON.parse(cleanStatementString) as SmartSearchStatement;
@@ -450,7 +450,7 @@ export async function run(
     }
     // Step 4: Generate answer
     const answerPrompt = answerGenerator(generationContext);
-		const response = await shinkaiLlmPromptProcessor({ format: 'text', prompt: answerPrompt });
+		const response = await hanzoLlmPromptProcessor({ format: 'text', prompt: answerPrompt });
     return {
       statements,
       sources: smartSearchSouces,

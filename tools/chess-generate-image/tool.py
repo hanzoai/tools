@@ -10,7 +10,7 @@ import chess.svg
 import cairosvg
 import os
 from typing import Dict, Any, Optional, List
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 
 class CONFIG:
     pass

@@ -8,7 +8,7 @@ from typing import Any, Optional, List, Dict
 import re
 import json
 
-from shinkai_local_tools import shinkai_llm_prompt_processor, download_pages
+from hanzo_local_tools import hanzo_llm_prompt_processor, download_pages
 
 class CONFIG:
     pass
@@ -170,7 +170,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
             "MARKDOWN_CONTENT_END\n"
         )
 
-        llm_resp = await shinkai_llm_prompt_processor({"prompt": prompt, "format": "text"})
+        llm_resp = await hanzo_llm_prompt_processor({"prompt": prompt, "format": "text"})
         if not isinstance(llm_resp, dict) or "message" not in llm_resp:
             output.error = "LLM tool did not return expected message."
             return output

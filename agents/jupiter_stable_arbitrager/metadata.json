@@ -1,17 +1,17 @@
 {
   "name": "Jupiter Stablecoin Arbitrager",
   "agent_id": "jupiter_stablecoin_arbitrager",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/jupiter_stablecoin_arbitrager",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/jupiter_stablecoin_arbitrager",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "Find and trade stablecoin arbitrage opportunities in Jupiter",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::solana_token_swap_quote",
-    "local:::__official_shinkai:::solana_tokens_in_wallet",
-    "local:::__official_shinkai:::solana_stablecoin_fetcher",
-    "local:::__official_shinkai:::solana_token_swap",
-    "local:::__official_shinkai:::wait_1_5_seconds"
+    "local:::__official_hanzo:::solana_token_swap_quote",
+    "local:::__official_hanzo:::solana_tokens_in_wallet",
+    "local:::__official_hanzo:::solana_stablecoin_fetcher",
+    "local:::__official_hanzo:::solana_token_swap",
+    "local:::__official_hanzo:::wait_1_5_seconds"
   ],
   "debug_mode": false,
   "config": {

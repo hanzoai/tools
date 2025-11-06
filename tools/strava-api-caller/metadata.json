@@ -12,7 +12,7 @@
     "sports"
   ],
   "version": "1.0.0",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "configurations": {
     "properties": {},
     "required": []
@@ -24,7 +24,7 @@
       "tokenUrl": "https://www.strava.com/oauth/token",
       "clientId": "",
       "clientSecret": "",
-      "redirectUrl": "https://secrets.shinkai.com/redirect",
+      "redirectUrl": "https://secrets.hanzo.com/redirect",
       "version": "2.0",
       "responseType": "code",
       "scopes": [

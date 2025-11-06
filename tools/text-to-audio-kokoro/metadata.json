@@ -1,8 +1,8 @@
 {
     "name": "Text to Audio",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/text-to-audio/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/text-to-audio/README.md",
     "description": "Converts text files (.txt or .md) to audio files using high-quality text-to-speech synthesis",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "version": "1.0.0",
     "keywords": [
         "text-to-speech",

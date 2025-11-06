@@ -1,6 +1,6 @@
 import { fetchSite } from "npm:sitefetch";
 import { join, basename } from "jsr:@std/path";
-import { getHomePath } from "./shinkai-local-support.ts";
+import { getHomePath } from "./hanzo-local-support.ts";
 
 /*
 Step-by-step plan:

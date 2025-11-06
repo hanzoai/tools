@@ -8,7 +8,7 @@ from typing import Any, Optional, List, Dict, Tuple
 import os
 import re
 import json
-from shinkai_local_tools import shinkai_llm_prompt_processor
+from hanzo_local_tools import hanzo_llm_prompt_processor
 
 class CONFIG:
     pass
@@ -134,7 +134,7 @@ async def find_section_index_by_prompt(sections_flat: List[Dict], prompt: str, r
         f"Sections:\n{sections_description}\n\n"
         f"Output a JSON object with one key, 'section_index', which is the index of the most relevant section, or null if none are relevant."
     )
-    response = await shinkai_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
+    response = await hanzo_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
     message = response.get("message", "").strip("```json\n").strip()
     try:
         result = json.loads(message)
@@ -173,7 +173,7 @@ async def propose_new_heading_for_move(
         f" - 'new_heading_line': string (the new complete heading line if 'relevel' is true, otherwise null)."
     )
     
-    response = await shinkai_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
+    response = await hanzo_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
     message = response.get("message", '{"relevel": false, "new_heading_line": null}').strip("```json\n").strip()
     try:
         return json.loads(message)

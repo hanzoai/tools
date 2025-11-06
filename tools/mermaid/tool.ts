@@ -1,8 +1,8 @@
 import axios from 'npm:axios@1.7.7';
-import { shinkaiLlmPromptProcessor } from './shinkai-local-tools.ts';
+import { hanzoLlmPromptProcessor } from './hanzo-local-tools.ts';
 import { encodeBase64 } from "https://deno.land/std@0.224.0/encoding/base64.ts";
 import { deflate } from "https://deno.land/x/compress@v0.4.5/zlib/deflate.ts";
-import { getHomePath } from './shinkai-local-support.ts';
+import { getHomePath } from './hanzo-local-support.ts';
 /**
  * Configuration for the tool.
  */
@@ -198,7 +198,7 @@ graph TD
     A[Start] --> B[Process]
     B --> C[End]`;
     }
-    const resp = await shinkaiLlmPromptProcessor({ format: 'text', prompt });
+    const resp = await hanzoLlmPromptProcessor({ format: 'text', prompt });
     
     // Clean up the response to extract just the Mermaid code
     let code = resp.message.trim();

@@ -4,7 +4,7 @@ import { promises as fs } from "node:fs";
 import { Transformer, builtInPlugins } from "npm:markmap-lib";
 import { fillTemplate } from "npm:markmap-render";
 import open from "npm:open";
-import { getHomePath } from "./shinkai-local-support.ts";
+import { getHomePath } from "./hanzo-local-support.ts";
 
 type CONFIG = {};
 type INPUTS = {

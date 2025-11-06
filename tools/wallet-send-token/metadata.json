@@ -1,6 +1,6 @@
 {
   "name": "Transfer ERC20 Tokens",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "homePage": "",
   "description": "Sending ERC20 tokens specified address.",
   "version": "1.0.0",

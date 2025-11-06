@@ -1,6 +1,6 @@
 {
     "name": "Linear Issue Updater",
-    "author": "@@official.sep-shinkai",
+    "author": "@@official.sep-hanzo",
     "description": "Updates an issue in Linear using the provided issue ID and optional fields.",
     "version": "1.0.0",
     "assets": [],

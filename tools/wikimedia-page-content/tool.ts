@@ -37,9 +37,9 @@ export const run: Run<Configurations, Parameters, Result> = async (
     
     const response = await axios.get(api_url, {
       headers: {
-        'User-Agent': 'ShinkaiWikimediaPageContent/1.0',
+        'User-Agent': 'HanzoWikimediaPageContent/1.0',
         'Accept': 'text/html; charset=utf-8',
-        'Api-User-Agent': 'ShinkaiWikimediaPageContent/1.0 (https://github.com/dcSpark/shinkai-tools)'
+        'Api-User-Agent': 'HanzoWikimediaPageContent/1.0 (https://github.com/hanzoai/tools)'
       }
     });
 

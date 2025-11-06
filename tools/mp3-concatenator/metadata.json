@@ -10,7 +10,7 @@
     "join"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {},
     "required": []
@@ -25,7 +25,7 @@
       },
       "output_filename": {
         "type": "string",
-        "description": "Optional filename for the output saved in the Shinkai home path ('.mp3' extension will be ensured)."
+        "description": "Optional filename for the output saved in the Hanzo home path ('.mp3' extension will be ensured)."
       },
       "input_files": {
         "type": "array",
@@ -65,7 +65,7 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor"
   ],
   "runner": "any",
   "operating_system": [

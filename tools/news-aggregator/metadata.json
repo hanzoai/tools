@@ -3,7 +3,7 @@
   "name": "News Aggregator",
   "version": "1.0.0",
   "description": "Aggregates latest news from multiple sources using newspaper3k, supporting parallel processing and category-based filtering",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "news",
     "aggregator",

@@ -1,13 +1,13 @@
 {
     "name": "Perplexity API",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/perplexity-api/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/perplexity-api/README.md",
     "description": "Searches the web using Perplexity API (limited)",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "version": "1.0.0",
     "keywords": [
       "perplexity",
       "api",
-      "shinkai"
+      "hanzo"
     ],
     "runner": "any",
   "operating_system": ["linux", "macos", "windows"],

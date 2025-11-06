@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Wikimedia Historical Events",
   "description": "Get historical events, births, deaths, and holidays for a specific date from Wikimedia",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "wikimedia",
     "history",

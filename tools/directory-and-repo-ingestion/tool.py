@@ -12,7 +12,7 @@ import tempfile
 import shutil
 from urllib.parse import urlparse
 from dataclasses import dataclass
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 import tiktoken
 
 class CONFIG:

@@ -102,7 +102,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
     # Prepare headers
     headers = {
         'Accept': 'application/json',
-        'User-Agent': 'Shinkai-Tool/1.0'
+        'User-Agent': 'Hanzo-Tool/1.0'
     }
     if api_key:
         headers['X-Cg-Pro-Api-Key'] = api_key

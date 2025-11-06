@@ -5,7 +5,7 @@
 # ///
 
 from typing import Any, Optional, List, Dict
-from shinkai_local_tools import shinkai_llm_prompt_processor, text_to_image_generator_getimg_ai_flux_1, wait_1_5_seconds
+from hanzo_local_tools import hanzo_llm_prompt_processor, text_to_image_generator_getimg_ai_flux_1, wait_1_5_seconds
 import json
 import asyncio
 
@@ -293,7 +293,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
         f"Story description:\n{inputs.story_description}\n"
         "End of story description."
     )
-    style_response = await shinkai_llm_prompt_processor({
+    style_response = await hanzo_llm_prompt_processor({
         "prompt": style_extract_prompt,
         "format": "text"
     })
@@ -312,7 +312,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
         "Include some actions that the description suggests. "
         "Be imaginative with detailed descriptions and narration, but stay true to the description."
     )
-    story_response = await shinkai_llm_prompt_processor({
+    story_response = await hanzo_llm_prompt_processor({
         "prompt": story_gen_prompt, "format": "text"
     })
     full_story = story_response.get("message", "")
@@ -331,7 +331,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
         "Respond with ONLY the JSON object."
     )
     
-    placeholder_response = await shinkai_llm_prompt_processor({
+    placeholder_response = await hanzo_llm_prompt_processor({
         "prompt": placeholder_prompt, "format": "text"
     })
 
@@ -351,7 +351,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
     scenes_to_generate = scenes_data.get("scenes", [])
 
     # Step 4: Generate images in parallel with a staggered start using wait_1_5_seconds tool
-    from shinkai_local_tools import wait_1_5_seconds
+    from hanzo_local_tools import wait_1_5_seconds
 
     image_generation_tasks = []
     style_text = f"Style or visual instructions: {style_instruction}\n" if style_instruction else ""
@@ -378,7 +378,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
             ),
             "format": "text"
         }
-        prompt_build_response = await shinkai_llm_prompt_processor(image_prompt_builder)
+        prompt_build_response = await hanzo_llm_prompt_processor(image_prompt_builder)
         constructed_prompt = prompt_build_response.get("message", "").strip()
 
         # Staggered task using wait_1_5_seconds for delay

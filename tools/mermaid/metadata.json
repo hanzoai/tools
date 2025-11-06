@@ -3,7 +3,7 @@
   "name": "mermaid",
   "version": "1.0.0",
   "description": "Generate diagrams and flowcharts using Mermaid syntax, it receives a natural language description and returns a PNG image and the final Mermaid code",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "mermaid",
     "diagram",

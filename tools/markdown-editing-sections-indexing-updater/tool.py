@@ -8,7 +8,7 @@ from typing import Any, Optional, List, Dict
 import os
 import re
 import json
-from shinkai_local_tools import shinkai_llm_prompt_processor
+from hanzo_local_tools import hanzo_llm_prompt_processor
 
 class CONFIG:
     pass
@@ -127,7 +127,7 @@ def replace_section_titles_in_content(md_content: str, titles_info: List[Dict[st
 
 async def call_llm_with_retries(prompt: str, max_retries: int = 2) -> (Optional[List[str]], Optional[str]):
     for attempt in range(max_retries + 1):
-        response = await shinkai_llm_prompt_processor({"format": "text", "prompt": prompt})
+        response = await hanzo_llm_prompt_processor({"format": "text", "prompt": prompt})
         message = response.get("message", "").strip()
         cleaned = message
         if cleaned.startswith("```json"):

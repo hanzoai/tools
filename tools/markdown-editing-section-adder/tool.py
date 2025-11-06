@@ -8,7 +8,7 @@ from typing import Any, Optional, List, Dict, Tuple
 import os
 import re
 import json
-from shinkai_local_tools import shinkai_llm_prompt_processor
+from hanzo_local_tools import hanzo_llm_prompt_processor
 
 class CONFIG:
     pass
@@ -138,7 +138,7 @@ async def find_most_relevant_section(sections_flat: List[Dict], prompt: str) -> 
         f" - 'section_index': index of the most relevant section if relevant is true, else null.\n"
         f"Only output the JSON object, no extra text.\n"
     )
-    response = await shinkai_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
+    response = await hanzo_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
     message = response.get("message", "").strip("```json\n").strip()
     try:
         result = json.loads(message)
@@ -193,7 +193,7 @@ async def propose_section_heading(
         f"4. Output *only* the heading line. Do not add any other text."
     )
     
-    response = await shinkai_llm_prompt_processor({"format": "text", "prompt": llm_prompt})
+    response = await hanzo_llm_prompt_processor({"format": "text", "prompt": llm_prompt})
     heading = response.get("message", "## New Section").strip()
     
     if not re.match(r"^#{1,6}\s+", heading):
@@ -222,7 +222,7 @@ async def propose_section_content(prompt: str, parent_heading_level: int) -> str
         f"2. Ensure any subheadings you create follow the level rule described above.\n"
         f"3. Output only the section content."
     )
-    response = await shinkai_llm_prompt_processor({"format": "text", "prompt": llm_prompt})
+    response = await hanzo_llm_prompt_processor({"format": "text", "prompt": llm_prompt})
     msg = response.get("message", "").strip()
     msg = strip_leading_heading(msg)
     return msg

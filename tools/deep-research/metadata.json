@@ -9,7 +9,7 @@
     "biblio"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "include_execution_log": {
@@ -124,12 +124,12 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::duckduckgo_search",
-    "local:::__official_shinkai:::download_pages",
-    "local:::__official_shinkai:::markdown_exporter",
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-    "local:::__official_shinkai:::wait_1_5_seconds",
-    "local:::__official_shinkai:::pdf_text_extractor"
+    "local:::__official_hanzo:::duckduckgo_search",
+    "local:::__official_hanzo:::download_pages",
+    "local:::__official_hanzo:::markdown_exporter",
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+    "local:::__official_hanzo:::wait_1_5_seconds",
+    "local:::__official_hanzo:::pdf_text_extractor"
   ],
   "runner": "any",
   "operating_system": [

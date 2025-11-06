@@ -1,6 +1,6 @@
 {
     "name": "ElevenLabs Isolate Voice",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "homePage": "",
     "description": "Isolates audio from YouTube videos or processes local audio files using ElevenLabs API.",
     "version": "1.0.0",
@@ -67,6 +67,6 @@
     "sqlQueries": [],
     "oauth": [],
     "tools": [
-        "local:::__official_shinkai:::youtube_download_mp3"
+        "local:::__official_hanzo:::youtube_download_mp3"
     ]
 }

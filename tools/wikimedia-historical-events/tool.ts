@@ -61,9 +61,9 @@ export const run: Run<Configurations, Parameters, Result> = async (
     
     const response = await axios.get(api_url, {
       headers: {
-        'User-Agent': 'ShinkaiWikimediaHistoricalEvents/1.0',
+        'User-Agent': 'HanzoWikimediaHistoricalEvents/1.0',
         'Accept': 'application/json',
-        'Api-User-Agent': 'ShinkaiWikimediaHistoricalEvents/1.0 (https://github.com/dcSpark/shinkai-tools)'
+        'Api-User-Agent': 'HanzoWikimediaHistoricalEvents/1.0 (https://github.com/hanzoai/tools)'
       }
     });
 

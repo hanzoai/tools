@@ -1,5 +1,5 @@
 {
-    "author": "@@official.sep-shinkai",
+    "author": "@@official.sep-hanzo",
     "name": "Linear Organization Fetcher",
     "version": "1.0.0",
     "description": "Fetches organization details including teams, labels and users from Linear API.",

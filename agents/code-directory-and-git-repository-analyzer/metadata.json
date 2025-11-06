@@ -1,13 +1,13 @@
 {
   "name": "Code Directory and Git Repository Analyzer",
   "agent_id": "code_directory_and_git_repository_analyzer",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/code_directory_and_git_repository_analyzer",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/code_directory_and_git_repository_analyzer",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "Ingests a local code directory or a github repo and can analyze it. Useful for code discovery and reviews, docs generation, codebase analysis and improvements.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::directory_and_repo_ingestion"
+    "local:::__official_hanzo:::directory_and_repo_ingestion"
   ],
   "debug_mode": false,
   "config": {

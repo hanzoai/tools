@@ -14,7 +14,7 @@ describe('Mermaid Diagram Tool', () => {
     const testDescription = 'Create a flow that goes from A to B to C.';
 
     // Execute tool
-    const response = await client.executeToolFromFile(toolPath, { description: testDescription }, {}, ['local:::__official_shinkai:::shinkai_llm_prompt_processor']);
+    const response = await client.executeToolFromFile(toolPath, { description: testDescription }, {}, ['local:::__official_hanzo:::hanzo_llm_prompt_processor']);
     // Expect the result to contain our output fields
     expect(response).toHaveProperty('filePath');
     expect(response).toHaveProperty('finalMermaid');
@@ -35,7 +35,7 @@ describe('Mermaid Diagram Tool', () => {
     try {
       const response = await client.executeToolFromFile(toolPath, {
         description: invalidDescription
-      }, {}, ['local:::__official_shinkai:::shinkai_llm_prompt_processor']);
+      }, {}, ['local:::__official_hanzo:::hanzo_llm_prompt_processor']);
       // We expect it might still succeed or might fail. Adjust as needed for your logic.
       expect(response).toHaveProperty('filePath');
       expect(response).toHaveProperty('finalMermaid');

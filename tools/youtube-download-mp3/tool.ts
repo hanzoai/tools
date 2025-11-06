@@ -1,5 +1,5 @@
 import { writeAll } from 'https://deno.land/std/io/mod.ts';
-import { getHomePath } from './shinkai-local-support.ts';
+import { getHomePath } from './hanzo-local-support.ts';
 
 type CONFIG = {
   apiKey: string;

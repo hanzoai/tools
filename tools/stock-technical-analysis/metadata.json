@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "id": "stock-technical-analysis",
   "description": "Fetches historical stock data from Tiingo and calculates basic technical indicators (SMA, RSI, MACD, ATR, etc.), then returns a structured analysis of the trend.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "stock",
     "analysis",

@@ -1,6 +1,6 @@
 import { v4 as uuid } from "npm:uuid";
 import { writeAll } from "https://deno.land/std/io/write_all.ts";
-import { getHomePath } from './shinkai-local-support.ts';
+import { getHomePath } from './hanzo-local-support.ts';
 
 type CONFIG = {
   ELEVENLABS_API_KEY: string;

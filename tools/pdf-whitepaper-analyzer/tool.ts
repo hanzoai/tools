@@ -1,9 +1,9 @@
 import {
-  shinkaiLlmPromptProcessor,
+  hanzoLlmPromptProcessor,
   smartSearchEngine,
-} from "./shinkai-local-tools.ts";
+} from "./hanzo-local-tools.ts";
 import * as pdfjsLib from "npm:pdfjs-dist";
-import { getAssetPaths } from "./shinkai-local-support.ts";
+import { getAssetPaths } from "./hanzo-local-support.ts";
 
 type CONFIG = { analysisGuide: string };
 type INPUTS = { pdfUrl: string };
@@ -39,7 +39,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
   console.log(`analysis guide ${analysisGuide}`);
 
   // Analyze the text using the LLM
-  const projectAndAuthorsResult = await shinkaiLlmPromptProcessor({
+  const projectAndAuthorsResult = await hanzoLlmPromptProcessor({
     format: "text",
     prompt: `
         Get the project name, company and authors of the following whitepaper. Be very brief
@@ -52,7 +52,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
   console.log(`project and authors ${projectAndAuthorsResult.message}`);
 
   // Analyze the text using the LLM
-  const analysisResult = await shinkaiLlmPromptProcessor({
+  const analysisResult = await hanzoLlmPromptProcessor({
     format: "text",
     prompt: `
         Analyze the whitepaper content according to the following rules:

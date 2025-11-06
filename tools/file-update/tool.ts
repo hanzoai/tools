@@ -1,4 +1,4 @@
-import { shinkaiLlmPromptProcessor } from './shinkai-local-tools.ts';
+import { hanzoLlmPromptProcessor } from './hanzo-local-tools.ts';
 
 type CONFIG = {};
 type INPUTS = { path: string, prompt: string };
@@ -21,7 +21,7 @@ ${file_content}
     ${inputs.prompt}
  </instructions>
 `;
-    const update = await shinkaiLlmPromptProcessor({ prompt });
+    const update = await hanzoLlmPromptProcessor({ prompt });
     await Deno.writeTextFile(inputs.path, update.message);
 
     return { 

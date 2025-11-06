@@ -1,13 +1,13 @@
 {
-  "name": "Shinkai tool logo and banner creator",
-  "agent_id": "shinkai_tool_logo_and_banner_creator",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/shinkai_tool_logo_and_banner_creator",
-  "llm_provider_id": "shinkai_free_trial",
-  "ui_description": "Creates squared logos and rectangular banners for Shinkai tools to list on Shinkai AI store. Just provide your tool name and description, the number of logos and/or banners to generate, and optionaly add minimal instruction. Might need multiple runs to get a result you like.",
+  "name": "Hanzo tool logo and banner creator",
+  "agent_id": "hanzo_tool_logo_and_banner_creator",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/hanzo_tool_logo_and_banner_creator",
+  "llm_provider_id": "hanzo_free_trial",
+  "ui_description": "Creates squared logos and rectangular banners for Hanzo tools to list on Hanzo AI store. Just provide your tool name and description, the number of logos and/or banners to generate, and optionaly add minimal instruction. Might need multiple runs to get a result you like.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::text_to_image_generator___getimg_ai_flux_1"
+    "local:::__official_hanzo:::text_to_image_generator___getimg_ai_flux_1"
   ],
   "debug_mode": false,
   "config": {

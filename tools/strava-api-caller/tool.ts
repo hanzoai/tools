@@ -1,4 +1,4 @@
-import { getAccessToken } from './shinkai-local-support.ts';
+import { getAccessToken } from './hanzo-local-support.ts';
 
 type CONFIG = {};
 

@@ -5,7 +5,7 @@
 # ///
 
 from typing import Any, Optional
-from shinkai_local_tools import shinkai_llm_prompt_processor, download_pages
+from hanzo_local_tools import hanzo_llm_prompt_processor, download_pages
 
 class CONFIG:
     url: Optional[str] = None
@@ -85,7 +85,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
     prompt = "\n\n".join(prompt_lines)
 
     try:
-        llm_result = await shinkai_llm_prompt_processor({
+        llm_result = await hanzo_llm_prompt_processor({
             "format": "text",
             "prompt": prompt
         })

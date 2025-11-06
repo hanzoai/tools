@@ -74,10 +74,10 @@ async function fetchPostJsonWithFallback<T>(urls: string[], body: object): Promi
   throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
 }
 
-// Helper function to fetch token address and decimals from Shinkai API
+// Helper function to fetch token address and decimals from Hanzo API
 async function getTokenAddress(symbol: string): Promise<{ address: string; decimals: number }> {
   const lowerSymbol = symbol.toLowerCase();
-  const url = `https://api.shinkai.com/solana/${lowerSymbol}`;
+  const url = `https://api.hanzo.com/solana/${lowerSymbol}`;
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Failed to fetch token address for ${symbol}: ${response.statusText}`);

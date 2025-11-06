@@ -1,6 +1,6 @@
 import { writeAll, readAll } from "https://deno.land/std/io/mod.ts";
-import { getHomePath } from "../shinkai-local-support.ts";
-import { youtubeDownloadMp3 } from "../shinkai-local-tools.ts";
+import { getHomePath } from "../hanzo-local-support.ts";
+import { youtubeDownloadMp3 } from "../hanzo-local-tools.ts";
 
 type CONFIG = {
   ELEVENLABS_API_KEY: string;

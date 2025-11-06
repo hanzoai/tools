@@ -11,8 +11,8 @@ import wave
 import json
 from google import genai
 from google.genai import types
-from shinkai_local_tools import shinkai_llm_prompt_processor
-from shinkai_local_support import get_home_path
+from hanzo_local_tools import hanzo_llm_prompt_processor
+from hanzo_local_support import get_home_path
 
 class CONFIG:
     api_key: str
@@ -80,7 +80,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
             "The final output must be ONLY the enhanced script itself, ready for the TTS engine."
         )
         combined_prompt_for_voices = f"{style_control_guide_for_voices}\n\nUser prompt:\n---\n{inputs.prompt}\n---"
-        prompt_response = await shinkai_llm_prompt_processor({"prompt": combined_prompt_for_voices, "format": "text"})
+        prompt_response = await hanzo_llm_prompt_processor({"prompt": combined_prompt_for_voices, "format": "text"})
         script_for_voice_selection = prompt_response.get("message", inputs.prompt)
 
         gender_guidance = ""
@@ -104,7 +104,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
             f"Return a single JSON object with two keys: '{temp_speaker_1_name}' and '{temp_speaker_2_name}', "
             f"with the chosen voice name as the value. Example: {{'{temp_speaker_1_name}': 'Kore', '{temp_speaker_2_name}': 'Puck'}}"
         )
-        voice_select_response = await shinkai_llm_prompt_processor({"prompt": voice_selection_prompt, "format": "json"})
+        voice_select_response = await hanzo_llm_prompt_processor({"prompt": voice_selection_prompt, "format": "json"})
         
         chosen_voice_1 = config.speaker_1_default_voice
         chosen_voice_2 = config.speaker_2_default_voice
@@ -144,7 +144,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
             "The final output must be ONLY the enhanced script itself."
         )
         combined_prompt = f"{style_control_guide}\n\nUser prompt:\n---\n{inputs.prompt}\n---"
-        prompt_response = await shinkai_llm_prompt_processor({"prompt": combined_prompt, "format": "text"})
+        prompt_response = await hanzo_llm_prompt_processor({"prompt": combined_prompt, "format": "text"})
         processed_prompt = prompt_response.get("message", inputs.prompt)
 
     client = genai.Client()

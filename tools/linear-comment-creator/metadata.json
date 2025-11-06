@@ -2,7 +2,7 @@
     "name": "Linear Comment Creator",
     "version": "1.0.0",
     "description": "Creates comments on Linear issues and returns the comment and issue details.",
-    "author": "@@official.sep-shinkai",
+    "author": "@@official.sep-hanzo",
     "assets": [],
     "configurations": {
         "properties": {

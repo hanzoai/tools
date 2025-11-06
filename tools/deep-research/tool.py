@@ -11,14 +11,14 @@ import re
 import os
 from datetime import date
 
-from shinkai_local_tools import (
-    shinkai_llm_prompt_processor,
+from hanzo_local_tools import (
+    hanzo_llm_prompt_processor,
     duck_duck_go_search,
     download_pages,
     pdf_text_extractor,
     wait_1_5_seconds
 )
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 
 
 # --------------------------- Config / simple types ---------------------------
@@ -203,7 +203,7 @@ def _truncate_content_bookend(content: str, first_chars: int, last_chars: int) -
 # --------------------------- Low-level raw helpers (no internal delays) ---------------------------
 async def llm_raw_call(payload: Dict[str, Any], log_fn) -> Dict[str, Any]:
     try:
-        resp = await shinkai_llm_prompt_processor(payload)
+        resp = await hanzo_llm_prompt_processor(payload)
         log_fn("INFO: llm_raw_call completed.")
         return resp or {}
     except Exception as e:
@@ -364,7 +364,7 @@ def _subsection_synthesis_prompt(research_query: str, section_title: str, subsec
         "- Synthesize the key findings from the NEW SOURCE MATERIALS into a cohesive narrative in your own words.\n"
         "- Be specific and precise; avoid generalities.\n"
         "- When appropriate, use markdown formatting such as bullet points, numbered lists, or tables to present information clearly and concisely. Do not overuse them.\n"
-        "- Include inline citations for every important claim using [ Source: URL ]. Make sure actual clickable URLs are well separated from the other characters. Example : '[ Source: https://www.shinkai.com/ ] [ Source: https://docs.shinkai.com/introduction ]' \n"
+        "- Include inline citations for every important claim using [ Source: URL ]. Make sure actual clickable URLs are well separated from the other characters. Example : '[ Source: https://www.hanzo.com/ ] [ Source: https://docs.hanzo.com/introduction ]' \n"
         "- Do **not** include a heading for the subsection – the caller will add a numbered heading.\n\n"
         "NEW SOURCE MATERIALS (excerpts):\n\n"
         f"{sources_summary}\n\n"
@@ -389,7 +389,7 @@ def _supplemental_prompt_for_query(research_query: str, section_title: str, sect
         "- Be exhaustive regarding this query but concise; integrate critical facts with context.\n"
         "- Write with a high quality of thought (being detailed but with concision, forthrighness, choosing exactly the right words to increase quality without sacrificing detail.\n"
         "- When appropriate, use markdown formatting such as bullet points, numbered lists, or tables to present information clearly. Do not overuse them.\n"
-        "- Include inline citations for every important claim using [ Source: URL ]. Make sure actual clickable URLs are well separated from the other characters. Example : '[ Source: https://www.shinkai.com/ ] [ Source: https://docs.shinkai.com/introduction ]' \n"
+        "- Include inline citations for every important claim using [ Source: URL ]. Make sure actual clickable URLs are well separated from the other characters. Example : '[ Source: https://www.hanzo.com/ ] [ Source: https://docs.hanzo.com/introduction ]' \n"
         "- Use markdown formatting (headings, lists) and write as an addendum block for this section.\n\n"
         "NEW SOURCE MATERIALS (excerpts):\n\n"
         f"{sources_summary}\n\n"
@@ -413,7 +413,7 @@ def _rewrite_section_prompt(research_query: str, section_title: str, section_des
         "- Be exhaustive without redundancy.\n"
         "- Be specific and precise; avoid generalities.\n"
         "- Write with a high quality of thought (being detailed but with concision, forthrighness, choosing exactly the right words to increase quality without sacrificing detail.\n"
-        "- Keep and merge all citations [ Source: URL ]. Make sure actual clickable URLs are well separated from the other characters. Example : '[ Source: https://www.shinkai.com/ ] [ Source: https://docs.shinkai.com/introduction ]'\n"
+        "- Keep and merge all citations [ Source: URL ]. Make sure actual clickable URLs are well separated from the other characters. Example : '[ Source: https://www.hanzo.com/ ] [ Source: https://docs.hanzo.com/introduction ]'\n"
         "- Include inline citations for every important claim using [ Source: URL ].  \n"
         "- Ensure a coherent flow and structure with markdown headings.\n"
         "- Output **only** the final, polished markdown for the full section (including the numbered heading)."

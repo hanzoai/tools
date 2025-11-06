@@ -1,10 +1,10 @@
 {
     "name": "X/Twitter Post",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/twitter-post/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/twitter-post/README.md",
     "description": "Function to post a tweet to Twitter.",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "version": "1.0.0",
-    "url": "https://help.shinkai.com/official-twitter-tool",
+    "url": "https://help.hanzo.com/official-twitter-tool",
     "keywords": [
       "twitter",
       "X",
@@ -53,7 +53,7 @@
       "name": "twitter",
       "version": "2.0",
       "authorizationUrl": "https://twitter.com/i/oauth2/authorize",
-      "redirectUrl": "https://secrets.shinkai.com/redirect",
+      "redirectUrl": "https://secrets.hanzo.com/redirect",
       "tokenUrl": "https://api.x.com/2/oauth2/token",
         "clientId": "",
         "clientSecret": "",

@@ -1,7 +1,7 @@
-import { shinkaiLlmPromptProcessor, wait15Seconds } from './shinkai-local-tools.ts';
+import { hanzoLlmPromptProcessor, wait15Seconds } from './hanzo-local-tools.ts';
 
 type CONFIG = {
-  // Note: LLM IDs must be as presented in Shinkai, coma-separated (e.g., 'shinkai_free_trial, gpt_5_mini, gemini_2_5_pro').
+  // Note: LLM IDs must be as presented in Hanzo, coma-separated (e.g., 'hanzo_free_trial, gpt_5_mini, gemini_2_5_pro').
   default_prompt_processing_LLMs?: string;
   default_synthesizer_LLM?: string;
   processing_mode?: 'parallel' | 'sequential'; // in parallel node, only one local model should be used
@@ -47,7 +47,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
     if (inputs.additional_instructions) {
       synth_prompt += `\n\nAdditional instructions: ${inputs.additional_instructions}`;
     }
-    const synth_res = await shinkaiLlmPromptProcessor({
+    const synth_res = await hanzoLlmPromptProcessor({
       format: 'text',
       prompt: synth_prompt,
       llm_provider: synthesizer_llm
@@ -64,7 +64,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
   if (mode === 'sequential') {
     for (const llm of processing_llms) {
       try {
-        const res = await shinkaiLlmPromptProcessor({
+        const res = await hanzoLlmPromptProcessor({
           format: 'text',
           prompt: inputs.user_prompt,
           llm_provider: llm
@@ -81,7 +81,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
     const promises = [];
     for (let i = 0; i < processing_llms.length; i++) {
       const llm = processing_llms[i];
-      const promise = shinkaiLlmPromptProcessor({
+      const promise = hanzoLlmPromptProcessor({
         format: 'text',
         prompt: inputs.user_prompt,
         llm_provider: llm
@@ -137,7 +137,7 @@ Analyze each response carefully:
   }
 
   // Call the synthesizer LLM.
-  const synth_res = await shinkaiLlmPromptProcessor({
+  const synth_res = await hanzoLlmPromptProcessor({
     format: 'text',
     prompt: synth_prompt,
     llm_provider: synthesizer_llm

@@ -3,7 +3,7 @@
   "name": "arxiv-search",
   "version": "1.0.0",
   "description": "Search for papers on arXiv with optional date range and category filters",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "arxiv",
     "search",

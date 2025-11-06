@@ -1,5 +1,5 @@
 {
-    "author": "Shinkai",
+    "author": "Hanzo",
     "runner": "any",
   "operating_system": ["linux", "macos", "windows"],
   "tool_set": "",
@@ -65,9 +65,9 @@
     "sqlQueries": [],
     "sqlTables": [],
     "tools": [
-      "local:::__official_shinkai:::pdf_text_extractor",
-      "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-      "local:::__official_shinkai:::eleven_labs_text_to_speech"
+      "local:::__official_hanzo:::pdf_text_extractor",
+      "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+      "local:::__official_hanzo:::eleven_labs_text_to_speech"
     ],
     "version": "1.0.0"
   }

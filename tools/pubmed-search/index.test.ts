@@ -12,7 +12,7 @@ import * as path from 'path';
 describe('PubMed Search Tool', () => {
   const toolPath = path.join(__dirname, 'tool.py');
   const client = getToolTestClient();
-  const TEST_EMAIL = 'integrations@shinkai.com';
+  const TEST_EMAIL = 'integrations@hanzo.com';
 
   it('fetches search results for a known query', async () => {
     console.log('Using email:', TEST_EMAIL);

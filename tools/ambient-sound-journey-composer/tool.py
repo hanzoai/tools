@@ -10,8 +10,8 @@ from math import isclose
 import json
 import os
 
-from shinkai_local_tools import ambient_sound_composer, mp3_concatenator, shinkai_llm_prompt_processor
-from shinkai_local_support import get_home_path
+from hanzo_local_tools import ambient_sound_composer, mp3_concatenator, hanzo_llm_prompt_processor
+from hanzo_local_support import get_home_path
 
 
 class CONFIG:
@@ -194,7 +194,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
     if getattr(inputs, "llm_provider", None):
         llm_payload["llm_provider"] = config.llm_provider
 
-    plan_raw = await shinkai_llm_prompt_processor(llm_payload)
+    plan_raw = await hanzo_llm_prompt_processor(llm_payload)
     plan_message = plan_raw.get("message", "") if isinstance(plan_raw, dict) else ""
     
     try:

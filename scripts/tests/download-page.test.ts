@@ -14,13 +14,13 @@ type INPUTS = {
   url: string;
 };
 
-const X_SHINKAI_TOOL_ID = `example-${Math.random()
+const X_HANZO_TOOL_ID = `example-${Math.random()
   .toString(36)
   .substring(2, 15)}`;
 
-const X_SHINKAI_APP_ID = `run-${Math.random().toString(36).substring(2, 15)}`;
+const X_HANZO_APP_ID = `run-${Math.random().toString(36).substring(2, 15)}`;
 
-const base_url = Deno.env.get("SHINKAI_NODE_ADDR") ?? "http://localhost:9950";
+const base_url = Deno.env.get("HANZO_NODE_ADDR") ?? "http://localhost:9950";
 const token = Deno.env.get("BEARER_TOKEN") ?? "debug";
 const llm_provider = Deno.env.get("INITIAL_AGENT_NAMES")
   ? (Deno.env.get("INITIAL_AGENT_NAMES") ?? "").split(",")[0]
@@ -30,9 +30,9 @@ async function runCommandTest(parameters: INPUTS) {
     method: "POST",
     headers: {
       Authorization: "Bearer " + token,
-      "x-shinkai-tool-id": X_SHINKAI_TOOL_ID,
-      "x-shinkai-app-id": X_SHINKAI_APP_ID,
-      "x-shinkai-llm-provider": llm_provider,
+      "x-hanzo-tool-id": X_HANZO_TOOL_ID,
+      "x-hanzo-app-id": X_HANZO_APP_ID,
+      "x-hanzo-llm-provider": llm_provider,
       "Content-Type": "application/json; charset=utf-8",
     },
     body: JSON.stringify({
@@ -54,7 +54,7 @@ Deno.test({
   fn: async () => {
 
     const parametersA: INPUTS = {
-      url: "https://shinkai.com",
+      url: "https://hanzo.com",
     };
     const dataA = await runCommandTest(parametersA);
     assertEquals(

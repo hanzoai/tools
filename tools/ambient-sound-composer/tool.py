@@ -16,8 +16,8 @@ import shlex
 import subprocess
 import tempfile
 
-from shinkai_local_tools import shinkai_llm_prompt_processor
-from shinkai_local_support import get_home_path
+from hanzo_local_tools import hanzo_llm_prompt_processor
+from hanzo_local_support import get_home_path
 
 import requests
 
@@ -75,7 +75,7 @@ def _format_sounds_for_display(sounds: List[Dict[str, str]], base_path: Path) ->
 
 
 async def _call_llm_async(payload: Dict[str, Any]) -> Dict[str, Any]:
-    return await shinkai_llm_prompt_processor(payload)
+    return await hanzo_llm_prompt_processor(payload)
 
 def fetch_sound_assets_from_github(api_url: str) -> List[Dict[str, str]]:
     print(f"Discovering sound assets from: {api_url}")

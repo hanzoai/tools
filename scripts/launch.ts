@@ -2,18 +2,18 @@ import { parseArgs } from "jsr:@std/cli";
 import { join } from "jsr:@std/path";
 
 const LLM_PROVIDER = Deno.env.get("LLM_PROVIDER") || "llama3_1_8b";
-const SHINKAI_API_URL = Deno.env.get("SHINKAI_API_URL") || "http://localhost:9550";
+const HANZO_API_URL = Deno.env.get("HANZO_API_URL") || "http://localhost:3690";
 const BEARER_TOKEN = Deno.env.get("BEARER_TOKEN") || "debug";
 const TOOL_ID = Deno.env.get("TOOL_ID") || "no-name";
 const APP_ID = Deno.env.get("APP_ID") || "no-app";
 /** 
-This script runs tools in a Shinkai Environment
+This script runs tools in a Hanzo Environment
 Usage: 
 deno run --allow-all launch.ts <tool-name> [--input=<JSON>] [--config=<JSON>] [--create-file=<file-name>] [--create-file-content=<text>] [--mount=<file-name>]    
 
 * <tool-name> - The name of the tool to run, must match the folder name in the ./tools/ directory.
 * --input=<JSON> and --config=<JSON> (optional) - if provided with key-value pairs.
-* --create-file=<file-name> (optional) - Creates a file in the Shinkai App.
+* --create-file=<file-name> (optional) - Creates a file in the Hanzo App.
 * --create-file-content=<text> (optional) - Adds initial content to the file created.
 * --mount=<file-name> (optional) - Adds a file to the mounts array. Can be specified multiple times.
 
@@ -115,13 +115,13 @@ async function readToolCode(toolName: string): Promise<{ code: string; toolType:
 async function executeCode(toolName: string, parameters: Record<string, any>, configurations: Record<string, any>, tools: string[], mounts: string[]) {
   const { code, toolType } = await readToolCode(toolName);
   
-  const response = await fetch(`${SHINKAI_API_URL}/v2/code_execution`, {
+  const response = await fetch(`${HANZO_API_URL}/v2/code_execution`, {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${BEARER_TOKEN}`,
-      "x-shinkai-tool-id": TOOL_ID,
-      "x-shinkai-app-id": APP_ID,
-      "x-shinkai-llm-provider": LLM_PROVIDER,
+      "x-hanzo-tool-id": TOOL_ID,
+      "x-hanzo-app-id": APP_ID,
+      "x-hanzo-llm-provider": LLM_PROVIDER,
       "Content-Type": "application/json; charset=utf-8",
     },
     body: JSON.stringify({
@@ -153,7 +153,7 @@ function parseJsonArg(arg: string | undefined): Record<string, any> {
 
 // TODO: 
 //
-// This is a temporary function to create a file in the Shinkai App.
+// This is a temporary function to create a file in the Hanzo App.
 // This should be replaced with a proper file creation API call.
 // This cannot be done yet, as we don't have access to the absolute path of the file created.
 //

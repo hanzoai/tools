@@ -1,5 +1,5 @@
 import { YoutubeTranscript } from 'npm:youtube-transcript@1.2.1';
-import { getHomePath } from './shinkai-local-support.ts';
+import { getHomePath } from './hanzo-local-support.ts';
 
 interface TranscriptSegment {
   text: string;

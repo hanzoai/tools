@@ -1,4 +1,4 @@
-name: Build Shinkai Tools
+name: Build Hanzo Tools
 
 on:
   workflow_dispatch:
@@ -49,24 +49,24 @@ jobs:
           GLOBAL_IDENTITY_NAME: ${{ vars.GLOBAL_IDENTITY_NAME }}
           API_V2_KEY: ${{ secrets.API_V2_KEY }}
           EMBEDDINGS_SERVER_URL: ${{ secrets.EMBEDDINGS_SERVER_URL }}
-          SHINKAI_NODE_ADDR: "http://localhost:9550"
+          HANZO_NODE_ADDR: "http://localhost:9550"
           BEARER_TOKEN: ${{ secrets.API_V2_KEY }}
           INITIALIZATION_DATA: ${{ secrets.INITIALIZATION_DATA }}
           DOWNLOAD_PREFIX: ${{ vars.DOWNLOAD_PREFIX }}
           SKIP_IMPORT_FROM_DIRECTORY: true
           INSTALL_FOLDER_PATH: /dev/null
-          SHINKAI_STORE_ADDR: ${{ vars.SHINKAI_STORE_ADDR }}
-          SHINKAI_STORE_TOKEN: ${{ secrets.SHINKAI_STORE_TOKEN }}
+          HANZO_STORE_ADDR: ${{ vars.HANZO_STORE_ADDR }}
+          HANZO_STORE_TOKEN: ${{ secrets.HANZO_STORE_TOKEN }}
           USE_DOCKER: true
-          SHINKAI_NODE_IMAGE: "dcspark/shinkai-node:release-latest"
+          HANZO_NODE_IMAGE: "hanzoai/node:release-latest"
         run: |
           ./scripts/run_node.sh &
-          timeout 60 bash -c 'until curl --compressed -s --location "$SHINKAI_NODE_ADDR/v2/health_check" | jq -e ".status == \"ok\"" > /dev/null; do sleep 1; done'
-          curl --compressed --location "$SHINKAI_NODE_ADDR/v2/initial_registration" \
+          timeout 60 bash -c 'until curl --compressed -s --location "$HANZO_NODE_ADDR/v2/health_check" | jq -e ".status == \"ok\"" > /dev/null; do sleep 1; done'
+          curl --compressed --location "$HANZO_NODE_ADDR/v2/initial_registration" \
             --header 'Content-Type: application/json; charset=utf-8' \
             --data "$INITIALIZATION_DATA"
           rm -rf ./packages && mkdir ./packages
           sleep 10
-          export NODE_VERSION=$(curl -s "${SHINKAI_NODE_ADDR}/v2/health_check" | jq -r '.version')
+          export NODE_VERSION=$(curl -s "${HANZO_NODE_ADDR}/v2/health_check" | jq -r '.version')
           echo "NODE_VERSION=$NODE_VERSION" >> $GITHUB_ENV
           deno run --allow-read --allow-write --allow-env --allow-net --allow-run scripts/build_tools.ts

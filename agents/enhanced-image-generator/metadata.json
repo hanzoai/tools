@@ -1,13 +1,13 @@
 {
   "name": "Enhanced image generator",
   "agent_id": "enhanced_image_generator",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/enhanced_image_generator",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/enhanced_image_generator",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "This Enhanced Image Generator Agent uses an extensive image generation guide to craft precise prompts before creating visuals.\nDon't hesitate to change its image generation tool.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::text_to_image_generator___getimg_ai_flux_1"
+    "local:::__official_hanzo:::text_to_image_generator___getimg_ai_flux_1"
   ],
   "debug_mode": false,
   "config": {

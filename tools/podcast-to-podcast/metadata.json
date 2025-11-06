@@ -1,5 +1,5 @@
 {
-    "author": "@@localhost.arb-sep-shinkai",
+    "author": "@@localhost.arb-sep-hanzo",
     "runner": "any",
   "operating_system": ["linux", "macos", "windows"],
   "tool_set": "",
@@ -15,7 +15,7 @@
       "transcript",
       "podcast",
       "converter",
-      "shinkai"
+      "hanzo"
     ],
     "name": "Podcast to Podcast",
     "oauth": [],
@@ -47,8 +47,8 @@
     "sqlQueries": [],
     "sqlTables": [],
     "tools": [
-      "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-      "local:::__official_shinkai:::eleven_labs_text_to_speech"
+      "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+      "local:::__official_hanzo:::eleven_labs_text_to_speech"
     ],
     "version": "1.0.0"
   }

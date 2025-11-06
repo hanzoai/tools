@@ -3,7 +3,7 @@
   "name": "arxiv-download",
   "version": "1.0.0",
   "description": "Download an arXiv paper PDF and optionally convert it to Markdown",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "arxiv",
     "pdf",

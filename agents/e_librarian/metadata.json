@@ -1,14 +1,14 @@
 {
   "name": "E-Librarian",
   "agent_id": "e_librarian",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/e_librarian",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/e_librarian",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "This E-Librarian AI Agent is a digital librarian designed to help users locate and access ebooks.\n\nIt searches digital archives and provides detailed results for each title, including the author, publication year, a brief synopsis, a direct link, and a cover image.\nTo ensure comprehensive results, the agent supplements its archive searches with Google Search for more obscure information or to answer general book-related questions.\nIt also provides guidance on potential access issues, such as suggesting a VPN for region-restricted content.\n\nTo expand this agent's capabilities, users are invited to integrate additional ebook search tools or recommendation engines.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::anna_s_archive_ebook_search___web_scrapping_based",
-    "local:::__official_shinkai:::google_search"
+    "local:::__official_hanzo:::anna_s_archive_ebook_search___web_scrapping_based",
+    "local:::__official_hanzo:::google_search"
   ],
   "debug_mode": false,
   "config": {

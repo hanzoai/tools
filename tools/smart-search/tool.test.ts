@@ -4,9 +4,9 @@ import "https://deno.land/std@0.190.0/dotenv/load.ts"; // Use the latest version
 // Now you can access your variables:
 console.log("API_KEY:", Deno.env.get("API_KEY"));
 console.log("PORT:", Deno.env.get("PORT"));
-console.log("X_SHINKAI_LLM_PROVIDER:", Deno.env.get("X_SHINKAI_LLM_PROVIDER"));
-console.log("SHINKAI_NODE_LOCATION:", Deno.env.get("SHINKAI_NODE_LOCATION"));
-console.log("X_SHINKAI_APP_ID:", Deno.env.get("X_SHINKAI_APP_ID"));
+console.log("X_HANZO_LLM_PROVIDER:", Deno.env.get("X_HANZO_LLM_PROVIDER"));
+console.log("HANZO_NODE_LOCATION:", Deno.env.get("HANZO_NODE_LOCATION"));
+console.log("X_HANZO_APP_ID:", Deno.env.get("X_HANZO_APP_ID"));
 
 import { run, SearchEngine } from "./tool.ts";
 

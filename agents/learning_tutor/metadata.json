@@ -1,18 +1,18 @@
 {
     "name": "Learning Tutor",
     "agent_id": "learning_tutor",
-    "full_identity_name": "@@official.sep-shinkai/main/agent/learning_tutor",
-    "llm_provider_id": "shinkai_free_trial",
+    "full_identity_name": "@@official.sep-hanzo/main/agent/learning_tutor",
+    "llm_provider_id": "hanzo_free_trial",
     "ui_description": "Creates a learning plan with videos to watch, webpages to read, and articles to study.",
     "knowledge": [],
     "storage_path": "",
     "tools": [
-        "local:::__official_shinkai:::youtube_transcript_extractor_2_0",
-        "local:::__official_shinkai:::youtube_search",
-        "local:::__official_shinkai:::google_search",
-        "local:::__official_shinkai:::download_pages",
-        "local:::__official_shinkai:::markdown_exporter",
-        "local:::__official_shinkai:::arxiv_search"
+        "local:::__official_hanzo:::youtube_transcript_extractor_2_0",
+        "local:::__official_hanzo:::youtube_search",
+        "local:::__official_hanzo:::google_search",
+        "local:::__official_hanzo:::download_pages",
+        "local:::__official_hanzo:::markdown_exporter",
+        "local:::__official_hanzo:::arxiv_search"
     ],
     "debug_mode": false,
     "config": {

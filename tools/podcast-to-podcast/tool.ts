@@ -1,6 +1,6 @@
 import { YoutubeTranscript } from 'npm:youtube-transcript';
-import { getHomePath } from './shinkai-local-support.ts'
-import { shinkaiLlmPromptProcessor, elevenLabsTextToSpeech } from './shinkai-local-tools.ts';
+import { getHomePath } from './hanzo-local-support.ts'
+import { hanzoLlmPromptProcessor, elevenLabsTextToSpeech } from './hanzo-local-tools.ts';
 
 type CONFIG = {};
 type INPUTS = {
@@ -57,7 +57,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         </text>
   `;
 
-  const { message: transcriptSummary } = await shinkaiLlmPromptProcessor({
+  const { message: transcriptSummary } = await hanzoLlmPromptProcessor({
     prompt: summarizePrompt,
     format: 'text',
   });
@@ -75,7 +75,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         </text>
     `;
 
-  const { message: podcast } = await shinkaiLlmPromptProcessor({
+  const { message: podcast } = await hanzoLlmPromptProcessor({
     prompt: narratePrompt,
     format: 'markdown',
   });

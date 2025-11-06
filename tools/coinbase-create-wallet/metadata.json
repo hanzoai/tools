@@ -1,14 +1,14 @@
 {
     "version": "1.0.0",
     "name": "Coinbase Wallet Creator",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/coinbase-create-wallet/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/coinbase-create-wallet/README.md",
     "description": "Tool for creating a Coinbase wallet",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "keywords": [
       "coinbase",
       "wallet",
       "creator",
-      "shinkai"
+      "hanzo"
     ],
     "runner": "any",
   "operating_system": ["linux", "macos", "windows"],

@@ -1,19 +1,19 @@
 {
   "name": "Linear Agent",
   "agent_id": "linear_agent",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/linear_agent",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/linear_agent",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "https://linear.app/ task manager.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::linear_comment_creator",
-    "local:::__official_shinkai:::linear_fetch_issues_by_team",
-    "local:::__official_shinkai:::linear_create_issue",
-    "local:::__official_shinkai:::linear_organization_fetcher",
-    "local:::__official_shinkai:::linear_fetch_workflow_states",
-    "local:::__official_shinkai:::linear_issue_updater",
-    "local:::__official_shinkai:::linear_fetch_issues_by_user"
+    "local:::__official_hanzo:::linear_comment_creator",
+    "local:::__official_hanzo:::linear_fetch_issues_by_team",
+    "local:::__official_hanzo:::linear_create_issue",
+    "local:::__official_hanzo:::linear_organization_fetcher",
+    "local:::__official_hanzo:::linear_fetch_workflow_states",
+    "local:::__official_hanzo:::linear_issue_updater",
+    "local:::__official_hanzo:::linear_fetch_issues_by_user"
   ],
   "debug_mode": false,
   "config": {

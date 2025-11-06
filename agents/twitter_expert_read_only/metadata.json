@@ -1,21 +1,21 @@
 {
   "name": "Twitter Expert - Read Only",
   "agent_id": "twitter_expert___read_only",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/twitter_expert___read_only",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/twitter_expert___read_only",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "This expert has access to multiple tools to analyze and extract any information needed from X (Twitter)",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::x_twitter_get_user",
-    "local:::__official_shinkai:::x_twitter_get_user_replies",
-    "local:::__official_shinkai:::x_twitter_get_user_tweets",
-    "local:::__official_shinkai:::x_twitter_get_user_following",
-    "local:::__official_shinkai:::x_twitter_get_user_followers",
-    "local:::__official_shinkai:::x_twitter_search",
-    "local:::__official_shinkai:::x_twitter_search_top",
-    "local:::__official_shinkai:::x_twitter_search_latest",
-    "local:::__official_shinkai:::x_twitter_search_users"
+    "local:::__official_hanzo:::x_twitter_get_user",
+    "local:::__official_hanzo:::x_twitter_get_user_replies",
+    "local:::__official_hanzo:::x_twitter_get_user_tweets",
+    "local:::__official_hanzo:::x_twitter_get_user_following",
+    "local:::__official_hanzo:::x_twitter_get_user_followers",
+    "local:::__official_hanzo:::x_twitter_search",
+    "local:::__official_hanzo:::x_twitter_search_top",
+    "local:::__official_hanzo:::x_twitter_search_latest",
+    "local:::__official_hanzo:::x_twitter_search_users"
   ],
   "debug_mode": false,
   "config": {

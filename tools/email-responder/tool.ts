@@ -1,10 +1,10 @@
 import {
     emailFetcher,
     sendEmail,
-    shinkaiLlmPromptProcessor,
-    shinkaiSqliteQueryExecutor,
+    hanzoLlmPromptProcessor,
+    hanzoSqliteQueryExecutor,
     memoryManagement,
-} from './shinkai-local-tools.ts';
+} from './hanzo-local-tools.ts';
 
 type EMAIL = {
     date: string;
@@ -97,10 +97,10 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         );
     `;
 
-    await shinkaiSqliteQueryExecutor({ query: createTableQuery });
+    await hanzoSqliteQueryExecutor({ query: createTableQuery });
     // Ensure the connection is closed or cleaned up if necessary
     // Verify table creation was successful
-    const tableCheck = await shinkaiSqliteQueryExecutor({
+    const tableCheck = await hanzoSqliteQueryExecutor({
         query: `SELECT name FROM sqlite_master WHERE type='table' AND name=?;`,
         params: [tableName]
     });
@@ -110,7 +110,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         to_date: inputs.to_date || '01-Jan-2099',
     });
 
-    const answeredEmailsQuery = await shinkaiSqliteQueryExecutor({
+    const answeredEmailsQuery = await hanzoSqliteQueryExecutor({
         query: `SELECT * FROM ${tableName}`,
     });
     if (!answeredEmailsQuery?.result) {
@@ -148,7 +148,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
 
             let response;
             try {
-                response = await shinkaiLlmPromptProcessor({
+                response = await hanzoLlmPromptProcessor({
                     format: 'text',
                     prompt: `You are a helpful email answering system.
                     Please respond to a following email but only in the manner of the following context:
@@ -199,7 +199,7 @@ export async function run(config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
                 escapeSqlString(response.message),
                 new Date(email.date)
             );
-            await shinkaiSqliteQueryExecutor({ query: insertEmail })
+            await hanzoSqliteQueryExecutor({ query: insertEmail })
             const mailId = emailUniqueId;
             mailIds.push(mailId);
         }

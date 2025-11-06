@@ -1,6 +1,6 @@
 {
     "name": "Telegram Bot",
-    "author": "@@official.shinkai",
+    "author": "@@official.hanzo",
     "configurations": {
       "properties": {
         "BOT_TOKEN": {
@@ -105,7 +105,7 @@
     "tool_set": "",
     "version": "1.0.0",
     "tools": [
-        "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-        "local:::__official_shinkai:::shinkai_sqlite_query_executor"
+        "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+        "local:::__official_hanzo:::hanzo_sqlite_query_executor"
     ]
   }

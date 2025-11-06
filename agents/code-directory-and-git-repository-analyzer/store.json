@@ -3,6 +3,6 @@
   "name": "Code Directory and Git Repository Analyzer",
   "description": "Ingests a local code directory or a github repo and can analyze it. Useful for code discovery and reviews, docs generation, codebase analysis and improvements.",
   "version": "1.0.0",
-  "author": "@@official.sep-shinkai",
+  "author": "@@official.sep-hanzo",
   "keywords": []
 }

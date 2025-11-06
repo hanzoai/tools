@@ -338,8 +338,8 @@ export async function saveToolsInNode(toolsOriginal: DirectoryEntry[]): Promise<
     // Build tool JSON
     const toolJson = await buildToolJson(toolContent, metadata, toolType, assets);
 
-    // Send to Shinkai node
-    const response = await fetch(`${Deno.env.get("SHINKAI_NODE_ADDR")}/v2/add_shinkai_tool`, {
+    // Send to Hanzo node
+    const response = await fetch(`${Deno.env.get("HANZO_NODE_ADDR")}/v2/add_hanzo_tool`, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${Deno.env.get("BEARER_TOKEN")}`,
@@ -349,9 +349,9 @@ export async function saveToolsInNode(toolsOriginal: DirectoryEntry[]): Promise<
     });
 
     if (!response.ok) {
-      console.error(`Failed to upload tool to Shinkai node. HTTP status: ${response.status}`);
+      console.error(`Failed to upload tool to Hanzo node. HTTP status: ${response.status}`);
       console.error(`Response: ${await response.text()}`);
-      throw Error(`Failed to upload tool ${tool.name} to Shinkai node. HTTP status: ${response.status}`);
+      throw Error(`Failed to upload tool ${tool.name} to Hanzo node. HTTP status: ${response.status}`);
     }
 
     // Get tool router key.
@@ -362,7 +362,7 @@ export async function saveToolsInNode(toolsOriginal: DirectoryEntry[]): Promise<
 
     // Get tool zip
     const zipResponse = await fetch(
-      `${Deno.env.get("SHINKAI_NODE_ADDR")}/v2/export_tool?tool_key_path=${tool.routerKey}`,
+      `${Deno.env.get("HANZO_NODE_ADDR")}/v2/export_tool?tool_key_path=${tool.routerKey}`,
       {
         headers: {
           "Authorization": `Bearer ${Deno.env.get("BEARER_TOKEN")}`,
@@ -428,7 +428,7 @@ export async function saveAgentsInNode(agentsOriginal: DirectoryEntry[]): Promis
   const agentsAdded = [];
   const agentsSaved: DirectoryEntry[] = [];
 
-  // Add agents to Shinkai Node
+  // Add agents to Hanzo Node
   for (const agent of agents) {
     // Wait 50ms between tool uploads
     await new Promise(resolve => setTimeout(resolve, 50));
@@ -436,7 +436,7 @@ export async function saveAgentsInNode(agentsOriginal: DirectoryEntry[]): Promis
     // Read files
     const metadata: AgentMetadata = JSON.parse(await Deno.readTextFile(join(agent.dir, "metadata.json")));
 
-    // Upload knowledge files to Shinkai node
+    // Upload knowledge files to Hanzo node
     if (await exists(join(agent.dir, "knowledge"))) {
       for await (const { filePath, fileName, relDir } of walkKnowledge(join(agent.dir, "knowledge"), '')) {
         const fileData = await Deno.readFile(filePath);
@@ -445,7 +445,7 @@ export async function saveAgentsInNode(agentsOriginal: DirectoryEntry[]): Promis
         formData.append('file_data', new Blob([fileData]));
         formData.append('filename', fileName);
         formData.append('path', path);
-        const response = await fetch(`${Deno.env.get("SHINKAI_NODE_ADDR")}/v2/upload_file_to_folder`, {
+        const response = await fetch(`${Deno.env.get("HANZO_NODE_ADDR")}/v2/upload_file_to_folder`, {
           method: "POST",
           headers: {
             "Authorization": `Bearer ${Deno.env.get("BEARER_TOKEN")}`,
@@ -459,8 +459,8 @@ export async function saveAgentsInNode(agentsOriginal: DirectoryEntry[]): Promis
       }
     }
 
-    // Send to Shinkai node
-    const response = await fetch(`${Deno.env.get("SHINKAI_NODE_ADDR")}/v2/add_agent`, {
+    // Send to Hanzo node
+    const response = await fetch(`${Deno.env.get("HANZO_NODE_ADDR")}/v2/add_agent`, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${Deno.env.get("BEARER_TOKEN")}`,
@@ -470,19 +470,19 @@ export async function saveAgentsInNode(agentsOriginal: DirectoryEntry[]): Promis
     });
 
     if (!response.ok) {
-      console.error(`Failed to upload agent to Shinkai node. HTTP status: ${response.status}`);
+      console.error(`Failed to upload agent to Hanzo node. HTTP status: ${response.status}`);
       console.error(`Response: ${await response.text()}`);
-      throw Error(`Failed to upload agent ${agent.name} to Shinkai node. HTTP status: ${response.status}`);
+      throw Error(`Failed to upload agent ${agent.name} to Hanzo node. HTTP status: ${response.status}`);
     }
 
     agentsAdded.push(agent);
   }
 
-  // Get agents from Shinkai Node
+  // Get agents from Hanzo Node
   for (const agent of agentsAdded) {
     // Get tool zip
     const zipResponse = await fetch(
-      `${Deno.env.get("SHINKAI_NODE_ADDR")}/v2/export_agent?agent_id=${agent.routerKey.split(':::')[2]}`,
+      `${Deno.env.get("HANZO_NODE_ADDR")}/v2/export_agent?agent_id=${agent.routerKey.split(':::')[2]}`,
       {
         headers: {
           "Authorization": `Bearer ${Deno.env.get("BEARER_TOKEN")}`,

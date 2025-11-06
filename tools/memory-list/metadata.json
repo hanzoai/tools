@@ -1,8 +1,8 @@
 {
   "name": "List Memory Management",
-  "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/memory/README.md",
+  "homepage": "https://github.com/hanzoai/tools/blob/main/tools/memory/README.md",
   "description": "Handles list memory storage and retrieval using a database. It stores memories with associated IDs and can retrieve them by ID or get all memories.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "version": "2.0.0",
   "keywords": [
     "memory",
@@ -121,7 +121,7 @@
     }
   ],
   "tools": [
-    "local:::__official_shinkai:::shinkai_sqlite_query_executor"
+    "local:::__official_hanzo:::hanzo_sqlite_query_executor"
   ],
   "oauth": null
 }

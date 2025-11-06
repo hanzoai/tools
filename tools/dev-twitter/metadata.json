@@ -1,8 +1,8 @@
 {
   "name": "X/Twitter Developer API",
-  "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/dev-twitter/README.md",
+  "homepage": "https://github.com/hanzoai/tools/blob/main/tools/dev-twitter/README.md",
   "description": "Tool to make requests to the X/Twitter Developer API using OAuth for authentication.",
-  "author": "@@localhost.sep-shinkai",
+  "author": "@@localhost.sep-hanzo",
   "version": "1.0.0",
   "keywords": [
       "x",
@@ -54,7 +54,7 @@
         "name": "twitter",
         "version": "2.0",
         "authorizationUrl": "https://twitter.com/i/oauth2/authorize",
-        "redirectUrl": "https://secrets.shinkai.com/redirect",
+        "redirectUrl": "https://secrets.hanzo.com/redirect",
         "tokenUrl": "https://api.x.com/2/oauth2/token",
           "clientId": "",
           "clientSecret": "",

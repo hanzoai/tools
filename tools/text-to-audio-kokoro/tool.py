@@ -18,7 +18,7 @@ import requests
 import onnxruntime as ort
 import time
 import numpy as np
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 
 # Configure Kokoro settings
 config.MAX_PHONEME_LENGTH = 128

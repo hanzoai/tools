@@ -1,5 +1,5 @@
 {
-    "author": "@@official.sep-shinkai",
+    "author": "@@official.sep-hanzo",
     "name": "Linear Fetch Issues By User",
     "description": "Fetches issues assigned to a user from Linear using an API key.",
     "assets": [],

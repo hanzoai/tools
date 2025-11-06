@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Wikimedia Page Content",
   "description": "Fetch the full HTML content of a specific Wikimedia page",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "wikimedia",
     "content",

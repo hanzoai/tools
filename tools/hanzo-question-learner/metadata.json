@@ -1,8 +1,8 @@
 {
-  "name": "Shinkai Question Learner",
+  "name": "Hanzo Question Learner",
   "homePage": "",
   "description": "Learns from web pages by generating questions and answers, and interacts with users based on these questions. If the action was 'ask' it returns a question, always include the question number when referencing it",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "version": "1.0.0",
   "keywords": [],
   "runner": "any",
@@ -70,9 +70,9 @@
     }
   ],
   "tools": [
-      "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-      "local:::__official_shinkai:::shinkai_sqlite_query_executor",
-      "local:::__official_shinkai:::download_pages"
+      "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+      "local:::__official_hanzo:::hanzo_sqlite_query_executor",
+      "local:::__official_hanzo:::download_pages"
   ],
   "oauth": []
 }

@@ -8,11 +8,11 @@
     "refine"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "llm": {
-        "description": "Optional LLM to use, instead of default. Use LLM IDs as displayed in Shinkai (e.g., 'shinkai_free_trial', 'gpt_5_mini', 'gemini_2_5_pro').",
+        "description": "Optional LLM to use, instead of default. Use LLM IDs as displayed in Hanzo (e.g., 'hanzo_free_trial', 'gpt_5_mini', 'gemini_2_5_pro').",
         "type": "string"
       },
       "showCategory": {
@@ -54,7 +54,7 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor"
   ],
   "runner": "any",
   "operating_system": [

@@ -1,4 +1,4 @@
-import { shinkaiLlmPromptProcessor } from './shinkai-local-tools.ts';
+import { hanzoLlmPromptProcessor } from './hanzo-local-tools.ts';
 
 type CONFIG = {
   llm?: string;
@@ -56,7 +56,7 @@ User prompt: ${inputs.prompt}`;
       ...baseProcessorInput,
       prompt: classificationPrompt
     };
-    const classificationResult = await shinkaiLlmPromptProcessor(classificationInput);
+    const classificationResult = await hanzoLlmPromptProcessor(classificationInput);
     const candidateCategory = classificationResult.message.trim().toLowerCase();
 
     if (validCategories.includes(candidateCategory)) {
@@ -94,7 +94,7 @@ Output only the refined prompt, without any additional text or explanations.`;
     ...baseProcessorInput,
     prompt: refinePrompt
   };
-  const refinedResult = await shinkaiLlmPromptProcessor(refineInput);
+  const refinedResult = await hanzoLlmPromptProcessor(refineInput);
 
   // Step 4: Build output
   const output: OUTPUT = {

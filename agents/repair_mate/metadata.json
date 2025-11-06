@@ -1,16 +1,16 @@
 {
   "name": "Repair mate",
   "agent_id": "repair_mate",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/repair_mate",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/repair_mate",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "AI Agent specialized in helping you repair and fix broken things (web and youtube access).",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::google_search",
-    "local:::__official_shinkai:::youtube_search",
-    "local:::__official_shinkai:::download_pages",
-    "local:::__official_shinkai:::youtube_transcript_extractor_2_0"
+    "local:::__official_hanzo:::google_search",
+    "local:::__official_hanzo:::youtube_search",
+    "local:::__official_hanzo:::download_pages",
+    "local:::__official_hanzo:::youtube_transcript_extractor_2_0"
   ],
   "debug_mode": false,
   "config": {

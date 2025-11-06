@@ -1,12 +1,12 @@
 {
     "name": "Math Expression Evaluator",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/math-exp/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/math-exp/README.md",
     "description": "Parses and evaluates mathematical expressions. It’s a safer and more math-oriented alternative to using JavaScript’s eval function for mathematical expressions.",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "keywords": [
       "math",
       "expr-eval",
-      "shinkai"
+      "hanzo"
     ],
     "version": "1.0.0",
     "runner": "any",

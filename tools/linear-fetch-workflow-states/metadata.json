@@ -1,7 +1,7 @@
 {
     "activated": false,
     "assets": [],
-    "author": "@@official.sep-shinkai",
+    "author": "@@official.sep-hanzo",
     "name": "Linear Fetch Workflow States",
     "description": "Fetches workflow states for all Teams or for a specific team using Linear API.",
     "version": "1.0.0",

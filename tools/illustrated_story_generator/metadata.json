@@ -10,7 +10,7 @@
     "image"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "num_scenes": {
@@ -76,9 +76,9 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-    "local:::__official_shinkai:::wait_1_5_seconds",
-    "local:::__official_shinkai:::text_to_image_generator___getimg_ai_flux_1"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+    "local:::__official_hanzo:::wait_1_5_seconds",
+    "local:::__official_hanzo:::text_to_image_generator___getimg_ai_flux_1"
   ],
   "runner": "any",
   "operating_system": [

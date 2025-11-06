@@ -1,8 +1,8 @@
 {
   "name": "Prompt writer",
   "agent_id": "prompt_writer",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/prompt_writer",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/prompt_writer",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "Writes and improves prompts using its knowledge of system prompts from major AI models and agents.",
   "knowledge": [],
   "storage_path": "",

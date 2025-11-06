@@ -5,7 +5,7 @@
 # ///
 
 from typing import Optional
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 from urllib.parse import urlparse
 from datetime import datetime
 import requests

@@ -1,6 +1,6 @@
 {
     "name": "Reddit Blog Post Generator",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "homePage": "",
     "description": "Generates a blog post about Reddit posts based on user input.",
     "version": "1.0.0",
@@ -81,7 +81,7 @@
     ],
     "tool_set": "reddit",
     "tools": [
-        "local:::__official_shinkai:::reddit_scrape",
-        "local:::__official_shinkai:::shinkai_llm_prompt_processor"
+        "local:::__official_hanzo:::reddit_scrape",
+        "local:::__official_hanzo:::hanzo_llm_prompt_processor"
     ]
 }

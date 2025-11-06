@@ -1,6 +1,6 @@
-import { downloadPages } from './shinkai-local-tools.ts';
-import { shinkaiLlmPromptProcessor } from './shinkai-local-tools.ts';
-import { shinkaiSqliteQueryExecutor } from './shinkai-local-tools.ts';
+import { downloadPages } from './hanzo-local-tools.ts';
+import { hanzoLlmPromptProcessor } from './hanzo-local-tools.ts';
+import { hanzoSqliteQueryExecutor } from './hanzo-local-tools.ts';
 
 type CONFIG = {};
 type INPUTS = { action: 'learn' | 'ask' | 'respond', url?: string, userResponse?: string, questionId?: number };
@@ -8,7 +8,7 @@ type OUTPUT = { message: string };
 
 export async function run(_config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
     // Create the questions table if it doesn't exist
-    await shinkaiSqliteQueryExecutor({
+    await hanzoSqliteQueryExecutor({
         query: `CREATE TABLE IF NOT EXISTS Questions (
             ID INTEGER PRIMARY KEY AUTOINCREMENT,
             Question TEXT NOT NULL,
@@ -24,7 +24,7 @@ export async function run(_config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         const markdownContent = downloadResult.markdown; // Assuming this is the returned markdown content
 
         // Generate questions and answers from markdown content
-        const llmResponse = await shinkaiLlmPromptProcessor({
+        const llmResponse = await hanzoLlmPromptProcessor({
             prompt: `Generate questions and answers from the following content:\n\n${markdownContent}\n\nFormat your output as a JSON array of objects with "question" and "answer" keys without any formatting.`,
             format: 'json'
         });
@@ -36,11 +36,11 @@ export async function run(_config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
             console.log(i, question, answer);
             i = i + 1;
             if (question.length > 0 && answer.length > 0) {
-                await shinkaiSqliteQueryExecutor({
+                await hanzoSqliteQueryExecutor({
                     query: `INSERT INTO Questions (Question, Answer) VALUES (?, ?)`,
                     params: [pair.question.trim(), pair.answer.trim()]
                 });
-                await shinkaiSqliteQueryExecutor({
+                await hanzoSqliteQueryExecutor({
                     query: `DELETE FROM Questions WHERE Question = '';`
                 });
             }
@@ -49,7 +49,7 @@ export async function run(_config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         return { message: "Learning completed and questions stored." };
         
     } else if (inputs.action === 'ask') {
-        const result = await shinkaiSqliteQueryExecutor({
+        const result = await hanzoSqliteQueryExecutor({
             query: `SELECT * FROM Questions ORDER BY CorrectCount ASC LIMIT 10`
         });
         const questions = result.result;
@@ -61,7 +61,7 @@ export async function run(_config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         
     } else if (inputs.action === 'respond' && inputs.userResponse && inputs.questionId) {
         const questionId = Number(inputs.questionId);
-        const result = await shinkaiSqliteQueryExecutor({
+        const result = await hanzoSqliteQueryExecutor({
             query: `SELECT * FROM Questions WHERE ID = ${questionId}`,
             params: []
         });
@@ -72,7 +72,7 @@ export async function run(_config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
             return { message: "Question not found." };
         }
       
-        const llmResponse = await shinkaiLlmPromptProcessor({
+        const llmResponse = await hanzoLlmPromptProcessor({
             prompt: `Check if the response ${inputs.userResponse} is an adecuate response to the question ${question.Answer}. Return CORRECT if it's correct, or INCORRECT if it's incorrect inside a JSON object with key result without any formatting, just RAW JSON.`,
             format: 'json'
         });
@@ -82,13 +82,13 @@ export async function run(_config: CONFIG, inputs: INPUTS): Promise<OUTPUT> {
         const llmAnswer = JSON.parse(llmResponse.message);
         
         if (llmAnswer.result === "CORRECT") {
-            await shinkaiSqliteQueryExecutor({
+            await hanzoSqliteQueryExecutor({
                 query: `UPDATE Questions SET CorrectCount = CorrectCount + 1 WHERE ID = ${questionId}`,
                 params: []
             });
             return { message: "CORRECT" };
         } else {
-            await shinkaiSqliteQueryExecutor({
+            await hanzoSqliteQueryExecutor({
                 query: `UPDATE Questions SET IncorrectCount = IncorrectCount + 1 WHERE ID = ${questionId}`,
                 params: []
             });

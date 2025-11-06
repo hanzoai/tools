@@ -13,7 +13,7 @@
     "file processing"
   ],
   "name": "PPTX File Processor",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "oauth": [],
   "operating_system": [
     "linux",
@@ -68,7 +68,7 @@
   "sqlTables": [],
   "tool_set": "",
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor"
   ],
   "version": "1.0.0"
 }

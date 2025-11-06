@@ -1,9 +1,9 @@
 {
   "name": "Send Email",
-  "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/email-sender/README.md",
+  "homepage": "https://github.com/hanzoai/tools/blob/main/tools/email-sender/README.md",
   "version": "1.0.0",
   "description": "Sends an email using SMTP.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "email",
     "smtp",

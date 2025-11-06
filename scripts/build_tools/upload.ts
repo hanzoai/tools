@@ -1,12 +1,12 @@
 import { join } from "https://deno.land/std@0.224.0/path/mod.ts";
 import { DirectoryEntry } from "./interfaces.ts";
 import { uploadAsset } from "./system.ts";
-// Upload tools to Shinkai Store
+// Upload tools to Hanzo Store
 export async function uploadTools(tools: DirectoryEntry[]) {
-  const store_addr = Deno.env.get("SHINKAI_STORE_ADDR");
-  const store_token = Deno.env.get("SHINKAI_STORE_TOKEN");
+  const store_addr = Deno.env.get("HANZO_STORE_ADDR");
+  const store_token = Deno.env.get("HANZO_STORE_TOKEN");
   if (!store_addr || !store_token) {
-    console.error("SHINKAI_STORE_ADDR or SHINKAI_STORE_TOKEN is not set");
+    console.error("HANZO_STORE_ADDR or HANZO_STORE_TOKEN is not set");
     return;
   }
   // Create packages directory
@@ -19,7 +19,7 @@ export async function uploadTools(tools: DirectoryEntry[]) {
   const directory = [...tools];
   await Deno.writeTextFile("packages/directory.json", JSON.stringify(directory, null, 2));
 
-  // Upload directory.json to Shinkai Store
+  // Upload directory.json to Hanzo Store
   for (const entry of directory) {
     let { dir, toolFile, isDefault, storeFile, storeName, ...store_entry } = entry;
     if (storeFile) store_entry.file = storeFile;
@@ -58,7 +58,7 @@ export async function uploadTools(tools: DirectoryEntry[]) {
       console.log(`Request body failed: ${JSON.stringify(store_entry, null, 2)}`);
     }
     if (response.status === 200) {
-      console.log(`Created/Updated ${entry.routerKey} to Shinkai Store successfully.`);
+      console.log(`Created/Updated ${entry.routerKey} to Hanzo Store successfully.`);
       if (entry.isDefault) {
         const default_tool = await fetch(`${store_addr}/store/defaults/${entry.routerKey}`, {
           method: "POST",

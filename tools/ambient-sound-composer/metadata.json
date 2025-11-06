@@ -8,7 +8,7 @@
     "relax"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "assets_folder": {
@@ -28,7 +28,7 @@
         "type": "string"
       },
       "llm_provider": {
-        "description": "Optional LLM to use for composition generation (overrides the LLM selected in the chat). Use LLM IDs as displayed in Shinkai (e.g., 'shinkai_free_trial', 'gpt_5_mini').",
+        "description": "Optional LLM to use for composition generation (overrides the LLM selected in the chat). Use LLM IDs as displayed in Hanzo (e.g., 'hanzo_free_trial', 'gpt_5_mini').",
         "type": "string"
       }
     },
@@ -166,7 +166,7 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor"
   ],
   "runner": "any",
   "operating_system": [

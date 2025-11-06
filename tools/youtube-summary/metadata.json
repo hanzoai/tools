@@ -1,8 +1,8 @@
 {
   "name": "Youtube Transcript Summarizer",
-  "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/youtube-summary/README.md",
+  "homepage": "https://github.com/hanzoai/tools/blob/main/tools/youtube-summary/README.md",
   "description": "Fetches the transcript of a YouTube video and generates a formatted summary using an LLM.",
-  "author": "@@eduardosotomontaner.arb-sep-shinkai",
+  "author": "@@eduardosotomontaner.arb-sep-hanzo",
   "version": "1.0.0",
   "keywords": [
     "youtube",
@@ -50,7 +50,7 @@
   "sqlTables": [],
   "sqlQueries": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor"
   ],
   "oauth": null
 }

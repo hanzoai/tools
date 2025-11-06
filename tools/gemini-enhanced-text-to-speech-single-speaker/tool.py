@@ -10,8 +10,8 @@ import os
 import wave
 from google import genai
 from google.genai import types
-from shinkai_local_tools import shinkai_llm_prompt_processor
-from shinkai_local_support import get_home_path
+from hanzo_local_tools import hanzo_llm_prompt_processor
+from hanzo_local_support import get_home_path
 
 class CONFIG:
     api_key: str
@@ -69,7 +69,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
         "prompt": combined_prompt,
         "format": "text",
     }
-    prompt_response = await shinkai_llm_prompt_processor(prompt_processor_input)
+    prompt_response = await hanzo_llm_prompt_processor(prompt_processor_input)
     processed_prompt = prompt_response.get("message", inputs.prompt)
 
     # Voice options with descriptions
@@ -112,7 +112,7 @@ async def run(config: CONFIG, inputs: INPUTS) -> OUTPUT:
             "prompt": voice_selection_prompt,
             "format": "text",
         }
-        voice_select_response = await shinkai_llm_prompt_processor(voice_select_input)
+        voice_select_response = await hanzo_llm_prompt_processor(voice_select_input)
         candidate_voice = voice_select_response.get("message", "").strip()
         # Validate candidate voice
         if candidate_voice in possible_voices:

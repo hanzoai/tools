@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import List, Optional
 from datetime import datetime
 
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 
 # --- Data Structures for Config, Input and Output ---
 

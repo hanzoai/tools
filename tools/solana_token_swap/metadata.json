@@ -9,7 +9,7 @@
     "crypto"
   ],
   "version": "1.0.1",
-  "author": "@@official.sep-shinkai",
+  "author": "@@official.sep-hanzo",
   "configurations": {
     "properties": {
       "PRIVATE_KEY": {

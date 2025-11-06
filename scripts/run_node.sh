@@ -2,7 +2,7 @@
 
 export NODE_API_IP="0.0.0.0"
 export NODE_IP="0.0.0.0"
-export NODE_API_PORT="9550"
+export NODE_API_PORT="3690"
 export NODE_WS_PORT="9551"
 export NODE_PORT="9552"
 export NODE_HTTPS_PORT="9553"
@@ -19,7 +19,7 @@ export INSTALL_FOLDER_PATH="/dev/null"
 export LOG_ALL=1
 
 if [ "$USE_DOCKER" = "true" ]; then
-  # Run shinkai-node Docker container with environment variables
+  # Run hanzo-node Docker container with environment variables
   docker run \
     -e NODE_API_IP \
     -e NODE_IP \
@@ -38,8 +38,8 @@ if [ "$USE_DOCKER" = "true" ]; then
     -e LOG_SIMPLE \
     -e NO_SECRET_FILE \
     -e PROXY_IDENTITY \
-    -e SHINKAI_TOOLS_RUNNER_DENO_BINARY_PATH \
-    -e SHINKAI_TOOLS_RUNNER_UV_BINARY_PATH \
+    -e HANZO_TOOLS_RUNNER_DENO_BINARY_PATH \
+    -e HANZO_TOOLS_RUNNER_UV_BINARY_PATH \
     -e LOG_ALL \
     -e INITIAL_AGENT_NAMES \
     -e INITIAL_AGENT_URLS \
@@ -53,20 +53,20 @@ if [ "$USE_DOCKER" = "true" ]; then
     -p ${NODE_WS_PORT}:${NODE_WS_PORT} \
     -p ${NODE_PORT}:${NODE_PORT} \
     -p ${NODE_HTTPS_PORT}:${NODE_HTTPS_PORT} \
-    ${SHINKAI_NODE_IMAGE}
+    ${HANZO_NODE_IMAGE}
 else
   # Download and run native binary
   if [[ "$(uname -s)" == "Darwin" && "$(uname -m)" == "arm64" ]]; then
-      curl --location https://github.com/dcSpark/shinkai-node/releases/download/v$SHINKAI_VERSION/shinkai-node-aarch64-apple-darwin.zip -o shinkai-node.zip
+      curl --location https://github.com/hanzoai/node/releases/download/v$HANZO_VERSION/hanzo-node-aarch64-apple-darwin.zip -o hanzo-node.zip
   elif [[ "$(uname -s)" == "Linux" && "$(uname -m)" == "x86_64" ]]; then
-      curl --location https://github.com/dcSpark/shinkai-node/releases/download/v$SHINKAI_VERSION/shinkai-node-x86_64-unknown-linux-gnu.zip -o shinkai-node.zip
+      curl --location https://github.com/hanzoai/node/releases/download/v$HANZO_VERSION/hanzo-node-x86_64-unknown-linux-gnu.zip -o hanzo-node.zip
   else
       echo "Unsupported platform"
       exit 1
   fi
 
-  mkdir -p shinkai-node
-  unzip -o shinkai-node.zip -d shinkai-node/
-  cd shinkai-node
-  ./shinkai-node
+  mkdir -p hanzo-node
+  unzip -o hanzo-node.zip -d hanzo-node/
+  cd hanzo-node
+  ./hanzo-node
 fi

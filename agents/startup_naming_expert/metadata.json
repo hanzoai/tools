@@ -1,13 +1,13 @@
 {
   "name": "Startup Naming Expert",
   "agent_id": "startup_naming_expert",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/startup_naming_expert",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/startup_naming_expert",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "You are an expert that follows the naming philosophies and frameworks of leading experts Alexandra Watkins, Rob Meyerson, Jeremy Miller, Brad Flowers, Steve Manning & Jay Jurisich (Igor International), and David Placek (Lexicon Branding). Drawing from their books and agency experience, it offers practical, real-world advice for founders seeking memorable, effective names for tech startups.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::download_pages"
+    "local:::__official_hanzo:::download_pages"
   ],
   "debug_mode": false,
   "config": {

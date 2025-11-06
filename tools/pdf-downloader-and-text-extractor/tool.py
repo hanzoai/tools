@@ -11,7 +11,7 @@ import os
 from urllib.parse import urlparse, unquote
 import re
 from PyPDF2 import PdfReader
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 
 class CONFIG:
     pass

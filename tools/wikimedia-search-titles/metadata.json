@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "name": "Wikimedia Title Search",
   "description": "Search Wikimedia pages by title with full-text search capabilities",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "wikimedia",
     "search",

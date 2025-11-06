@@ -1,8 +1,8 @@
 {
   "name": "X/Twitter Get Tweet",
-  "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/twitter-get-tweet/README.md",
+  "homepage": "https://github.com/hanzoai/tools/blob/main/tools/twitter-get-tweet/README.md",
   "description": "Function to fetch a tweet from Twitter by its ID.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "homePage": "",
   "configurations": {
     "type": "object",

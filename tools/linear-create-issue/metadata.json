@@ -1,6 +1,6 @@
 {
     "name": "Linear Create Issue",
-    "author": "@@official.sep-shinkai",
+    "author": "@@official.sep-hanzo",
     "description": "Creates a new issue in Linear using the Linear API.",
     "version": "1.0.0",
     "assets": [],

@@ -1,8 +1,8 @@
 {
     "name": "X/Twitter Get User Followers",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/twitter-get-user-followers/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/twitter-get-user-followers/README.md",
     "description": "Function to fetch the list of users who follow a specific Twitter user.",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "homePage": "",
     "configurations": {
       "type": "object",

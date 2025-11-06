@@ -1,14 +1,14 @@
 {
   "name": "Mind Map Creator",
   "agent_id": "mind_map_creator",
-  "full_identity_name": "@@official.sep-shinkai/main/agent/mind_map_creator",
-  "llm_provider_id": "shinkai_free_trial",
+  "full_identity_name": "@@official.sep-hanzo/main/agent/mind_map_creator",
+  "llm_provider_id": "hanzo_free_trial",
   "ui_description": "Converts content into an interactive Mind Map. Can fetch content from URLs too.",
   "knowledge": [],
   "storage_path": "",
   "tools": [
-    "local:::__official_shinkai:::download_pages",
-    "local:::__official_shinkai:::markdown_to_mind_map"
+    "local:::__official_hanzo:::download_pages",
+    "local:::__official_hanzo:::markdown_to_mind_map"
   ],
   "debug_mode": false,
   "config": {

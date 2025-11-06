@@ -1,8 +1,8 @@
 {
   "name": "X/Twitter Search Top",
-  "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/twitter-search-top/README.md",
+  "homepage": "https://github.com/hanzoai/tools/blob/main/tools/twitter-search-top/README.md",
   "description": "Function to search for top tweets on Twitter based on a query string.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "homePage": "",
   "configurations": {
     "type": "object",

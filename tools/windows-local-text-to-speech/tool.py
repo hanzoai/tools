@@ -8,7 +8,7 @@
 from typing import Optional, List
 import pyttsx3
 import os
-from shinkai_local_support import get_home_path
+from hanzo_local_support import get_home_path
 
 class CONFIG:
     default_voice_id: Optional[int] = None

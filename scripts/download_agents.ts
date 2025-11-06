@@ -1,4 +1,4 @@
-const SHINKAI_NODE_ADDR = Deno.env.get("SHINKAI_NODE_ADDR") || "http://127.0.0.1:9550";
+const HANZO_NODE_ADDR = Deno.env.get("HANZO_NODE_ADDR") || "http://127.0.0.1:3690";
 const API_V2_KEY = Deno.env.get("API_V2_KEY") || "debug";
 const FOLDER_PATH = Deno.env.get("FOLDER_PATH") || "node_dump";
 
@@ -31,7 +31,7 @@ try {
 }
 
 // Fetch all agents
-const response = await fetch(`${SHINKAI_NODE_ADDR}/v2/get_all_agents`, {
+const response = await fetch(`${HANZO_NODE_ADDR}/v2/get_all_agents`, {
     headers: {
         "Authorization": `Bearer ${API_V2_KEY}`,
     },
@@ -48,7 +48,7 @@ for (const agentId of agentIds) {
     // Download agent zip
     console.log(`Downloading agent: ${agentId}`);
     const agentResponse = await fetch(
-        `${SHINKAI_NODE_ADDR}/v2/export_agent?agent_id=${agentId}`,
+        `${HANZO_NODE_ADDR}/v2/export_agent?agent_id=${agentId}`,
         {
             headers: {
                 "Authorization": `Bearer ${API_V2_KEY}`,
@@ -95,7 +95,7 @@ for (const agentId of agentIds) {
         );
 
         // Update full_identity_name
-        metadata.full_identity_name = `@@official.sep-shinkai/main/agent/${agentId}`;
+        metadata.full_identity_name = `@@official.sep-hanzo/main/agent/${agentId}`;
         await Deno.writeTextFile(
             `${agentDir}/metadata.json`,
             JSON.stringify(metadata, null, 2),
@@ -119,7 +119,7 @@ for (const agentId of agentIds) {
                 if (zipFile.endsWith('.zip')) {
                     const toolName = zipFile
                         .replace('.zip', '')
-                        .replace('local_____official_shinkai___', '');
+                        .replace('local_____official_hanzo___', '');
                     const toolDir = `${FOLDER_PATH}/tools/${toolName}`;
                     try {
                         await Deno.stat(toolDir);
@@ -197,7 +197,7 @@ for (const agentId of agentIds) {
             name: metadata.name,
             description: metadata.ui_description,
             version: "1.0.0",
-            author: "@@official.sep-shinkai",
+            author: "@@official.sep-hanzo",
             keywords: [],
         };
 

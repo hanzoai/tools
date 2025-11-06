@@ -20,7 +20,7 @@ Deno.test("Check if related tools exist", async () => {
   }
 });
 
-Deno.test("Compare shinkai-node generated ZIP __tool.json vs .tool-dump.test.json", async () => {
+Deno.test("Compare hanzo-node generated ZIP __tool.json vs .tool-dump.test.json", async () => {
   const tools_raw = await processToolsDirectory();
   const tools_saved = await saveToolsInNode(tools_raw);
 

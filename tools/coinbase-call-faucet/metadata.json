@@ -1,13 +1,13 @@
 {
     "version": "1.0.0",
     "name": "Coinbase Faucet Caller",
-    "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/coinbase-call-faucet/README.md",
+    "homepage": "https://github.com/hanzoai/tools/blob/main/tools/coinbase-call-faucet/README.md",
     "description": "Tool for calling a faucet on Coinbase",
-    "author": "Shinkai",
+    "author": "Hanzo",
     "keywords": [
       "coinbase",
       "faucet",
-      "shinkai"
+      "hanzo"
     ],
     "runner": "any",
   "operating_system": ["linux", "macos", "windows"],

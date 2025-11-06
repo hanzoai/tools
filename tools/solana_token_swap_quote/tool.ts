@@ -87,7 +87,7 @@ function convertToRawAmount(amount: string, decimals: number): string {
 
 async function getTokenData(symbol: string): Promise<TokenData> {
   const lowerSymbol = symbol.toLowerCase();
-  const url = `https://api.shinkai.com/solana/${lowerSymbol}`;
+  const url = `https://api.hanzo.com/solana/${lowerSymbol}`;
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Failed to fetch token data for ${symbol}: ${response.statusText}`);
   let data: any = await response.json();

@@ -9,8 +9,8 @@ from typing import Any, Optional, List, Dict
 import os
 import requests
 from pptx import Presentation
-from shinkai_local_tools import shinkai_llm_prompt_processor
-from shinkai_local_support import get_home_path 
+from hanzo_local_tools import hanzo_llm_prompt_processor
+from hanzo_local_support import get_home_path 
 
 class CONFIG:
     pass
@@ -90,7 +90,7 @@ async def _analyze_presentation(working_file_path: str, prompt: Optional[str]) -
                 for run in paragraph.runs:
                     content.append(run.text)
     analysis_prompt = prompt if prompt else "Summarize the contents"
-    analysis_result = await shinkai_llm_prompt_processor({
+    analysis_result = await hanzo_llm_prompt_processor({
         "prompt": f"The user has asked a question about the following presentation <content>{' '.join(content)}</content> <question>{analysis_prompt}</question>", 
         "format": "text"
     })

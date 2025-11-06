@@ -1,11 +1,11 @@
-import { shinkaiTypescriptUnsafeProcessor } from "./shinkai-local-tools.ts";
-import { getAssetPaths } from './shinkai-local-support.ts';
+import { hanzoTypescriptUnsafeProcessor } from "./hanzo-local-tools.ts";
+import { getAssetPaths } from './hanzo-local-support.ts';
 
 const getStagehandEngine = async () => {
     const assets = await getAssetPaths();
     return await Deno.readTextFile(assets.find(f => f.match(/engine.ts$/)));
 }
-const getShinkaiEthers = async () => {
+const getHanzoEthers = async () => {
     const assets = await getAssetPaths();
     return await Deno.readTextFile(assets.find(f => f.match(/ethers.js$/)));
 }
@@ -20,7 +20,7 @@ const getStagehandPackage = () => {
     "license": "ISC",
     "description": "",
     "dependencies": {
-      "@browserbasehq/stagehand": "https://github.com/dcspark/stagehand",
+      "@browserbasehq/stagehand": "https://github.com/hanzoai/stagehand",
       "sharp": "^0.33.5",
       "json-schema-to-zod": "^2.6.0",
       "zod": "^3.24.1"
@@ -34,9 +34,9 @@ export async function run(config: { wallet_sk?: string }, parameters: any) {
         wallet_sk: config.wallet_sk,
     }
     if (config.wallet_sk) {
-        config_.src = await getShinkaiEthers();
+        config_.src = await getHanzoEthers();
     }
-    return await shinkaiTypescriptUnsafeProcessor({
+    return await hanzoTypescriptUnsafeProcessor({
         code: await getStagehandEngine(),
         package: getStagehandPackage(),
         parameters,

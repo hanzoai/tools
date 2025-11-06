@@ -2,12 +2,12 @@
   "name": "iterm-write",
   "version": "1.0.0",
   "description": "Writes a command (or text) to the active iTerm terminal.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "keywords": [
     "iterm",
     "terminal",
     "automation",
-    "shinkai"
+    "hanzo"
   ],
   "runner": "any",
   "operating_system": [

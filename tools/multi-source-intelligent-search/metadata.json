@@ -10,7 +10,7 @@
     "research"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "alwaysIncludeYoutube": {
@@ -22,7 +22,7 @@
         "type": "string"
       },
       "llm": {
-        "description": "Optional override for the LLM to use to generate tool suggestions and evaluating results. Leave empty to use the default LLM. Use LLM IDs as displayed in Shinkai (e.g., 'shinkai_free_trial', 'gpt_5_mini', 'gemini_2_5_pro').",
+        "description": "Optional override for the LLM to use to generate tool suggestions and evaluating results. Leave empty to use the default LLM. Use LLM IDs as displayed in Hanzo (e.g., 'hanzo_free_trial', 'gpt_5_mini', 'gemini_2_5_pro').",
         "type": "string"
       }
     },
@@ -165,14 +165,14 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::arxiv_search",
-    "local:::__official_shinkai:::anna_s_archive_ebook_search___web_scrapping_based",
-    "local:::__official_shinkai:::google_news_search",
-    "local:::__official_shinkai:::pubmed_search",
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-    "local:::__official_shinkai:::wait_1_5_seconds",
-    "local:::__official_shinkai:::web_search",
-    "local:::__official_shinkai:::youtube_search"
+    "local:::__official_hanzo:::arxiv_search",
+    "local:::__official_hanzo:::anna_s_archive_ebook_search___web_scrapping_based",
+    "local:::__official_hanzo:::google_news_search",
+    "local:::__official_hanzo:::pubmed_search",
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+    "local:::__official_hanzo:::wait_1_5_seconds",
+    "local:::__official_hanzo:::web_search",
+    "local:::__official_hanzo:::youtube_search"
   ],
   "runner": "any",
   "operating_system": [

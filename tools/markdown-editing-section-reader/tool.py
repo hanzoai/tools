@@ -8,7 +8,7 @@ from typing import Any, Optional, List, Dict, Tuple
 import os
 import re
 import json
-from shinkai_local_tools import shinkai_llm_prompt_processor
+from hanzo_local_tools import hanzo_llm_prompt_processor
 
 class CONFIG:
     pass
@@ -140,7 +140,7 @@ async def find_most_relevant_section(flat_sections: List[Dict], prompt: str) -> 
         f" - 'section_index': index of the most relevant section if relevant is true, else null.\n"
         f"Only output the JSON object, no extra text.\n"
     )
-    response = await shinkai_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
+    response = await hanzo_llm_prompt_processor({"format": "json", "prompt": llm_prompt})
     message = response.get("message", "").strip("```json\n").strip()
     try:
         result = json.loads(message)

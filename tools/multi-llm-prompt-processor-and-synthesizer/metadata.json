@@ -1,6 +1,6 @@
 {
   "name": "Multi-LLM Prompt Processor and Synthesizer",
-  "description": "This tool enhances prompt results by querying multiple LLMs with a single prompt. It then uses a final \"synthesizer\" LLM to analyze all the individual responses and craft one superior, comprehensive answer that combines the best elements of each.\n\n## How to Use\n\n1.  Set the `processing_mode` to `parallel` (faster, staggered start) or 'sequential' (if using multiple local models).\n2.  List the processing LLMs, using their Shinkai IDs (e.g., `shinkai_free_trial, gpt_5_mini, gemini_2_5_pro`).\n3.  Choose a powerful synthesizer LLM in `default_synthesizer_LLM` to create the final answer, using its Shinkai ID (e.g., `shinkai_free_trial').\n4. Provide your prompt in the `user_prompt` input.\n",
+  "description": "This tool enhances prompt results by querying multiple LLMs with a single prompt. It then uses a final \"synthesizer\" LLM to analyze all the individual responses and craft one superior, comprehensive answer that combines the best elements of each.\n\n## How to Use\n\n1.  Set the `processing_mode` to `parallel` (faster, staggered start) or 'sequential' (if using multiple local models).\n2.  List the processing LLMs, using their Hanzo IDs (e.g., `hanzo_free_trial, gpt_5_mini, gemini_2_5_pro`).\n3.  Choose a powerful synthesizer LLM in `default_synthesizer_LLM` to create the final answer, using its Hanzo ID (e.g., `hanzo_free_trial').\n4. Provide your prompt in the `user_prompt` input.\n",
   "keywords": [
     "llm",
     "synthesis",
@@ -9,15 +9,15 @@
     "LLM panel"
   ],
   "version": "1.0.0",
-  "author": "@@official.shinkai",
+  "author": "@@official.hanzo",
   "configurations": {
     "properties": {
       "default_prompt_processing_LLMs": {
-        "description": "Comma-separated list of default LLMs for prompt processing, using their Shinkai IDs (e.g., 'shinkai_free_trial, gpt_5, gemini_2_5_pro').",
+        "description": "Comma-separated list of default LLMs for prompt processing, using their Hanzo IDs (e.g., 'hanzo_free_trial, gpt_5, gemini_2_5_pro').",
         "type": "string"
       },
       "default_synthesizer_LLM": {
-        "description": "Default LLM for synthesizing the results, using its Shinkai ID (e.g., 'shinkai_free_trial').",
+        "description": "Default LLM for synthesizing the results, using its Hanzo ID (e.g., 'hanzo_free_trial').",
         "type": "string"
       },
       "processing_mode": {
@@ -45,11 +45,11 @@
       },
       "prompt_processing_LLMs": {
         "type": "string",
-        "description": "Optional override for processing LLMs, comma-separated, using their Shinkai IDs (e.g., 'shinkai_free_trial, gpt_5_mini')."
+        "description": "Optional override for processing LLMs, comma-separated, using their Hanzo IDs (e.g., 'hanzo_free_trial, gpt_5_mini')."
       },
       "synthesizer_LLM": {
         "type": "string",
-        "description": "Optional override for the synthesizer LLM, using its Shinkai ID (e.g., 'shinkai_free_trial')."
+        "description": "Optional override for the synthesizer LLM, using its Hanzo ID (e.g., 'hanzo_free_trial')."
       }
     },
     "required": [
@@ -106,8 +106,8 @@
   "sqlQueries": [],
   "sqlTables": [],
   "tools": [
-    "local:::__official_shinkai:::shinkai_llm_prompt_processor",
-    "local:::__official_shinkai:::wait_1_5_seconds"
+    "local:::__official_hanzo:::hanzo_llm_prompt_processor",
+    "local:::__official_hanzo:::wait_1_5_seconds"
   ],
   "runner": "any",
   "operating_system": [

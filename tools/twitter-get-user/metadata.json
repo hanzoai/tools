@@ -1,8 +1,8 @@
 {
   "name": "X/Twitter Get User",
-  "homepage": "https://github.com/dcSpark/shinkai-tools/blob/main/tools/twitter-get-user/README.md",
+  "homepage": "https://github.com/hanzoai/tools/blob/main/tools/twitter-get-user/README.md",
   "description": "Function to fetch Twitter user information by username.",
-  "author": "Shinkai",
+  "author": "Hanzo",
   "homePage": "",
   "configurations": {
     "type": "object",

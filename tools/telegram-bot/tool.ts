@@ -1,5 +1,5 @@
-import { shinkaiLlmPromptProcessor } from './shinkai-local-tools.ts';
-import { shinkaiSqliteQueryExecutor } from "./shinkai-local-tools.ts";
+import { hanzoLlmPromptProcessor } from './hanzo-local-tools.ts';
+import { hanzoSqliteQueryExecutor } from "./hanzo-local-tools.ts";
 
 const TELEGRAM_API_URL = (BOT_TOKEN: string) => `https://api.telegram.org/bot${BOT_TOKEN}`;
 
@@ -18,7 +18,7 @@ interface Message {
 
 // Update table creation to use TEXT type for all columns
 async function ensureTablesExist() {
-  await shinkaiSqliteQueryExecutor({
+  await hanzoSqliteQueryExecutor({
     query: `
     CREATE TABLE IF NOT EXISTS bot_state (
       id INTEGER PRIMARY KEY CHECK (id = 1),
@@ -27,7 +27,7 @@ async function ensureTablesExist() {
     `,
     params: []
   });
-  await shinkaiSqliteQueryExecutor({
+  await hanzoSqliteQueryExecutor({
     query: `
     CREATE TABLE IF NOT EXISTS chat_history (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -44,7 +44,7 @@ async function ensureTablesExist() {
 // Update loadState to parse the string back to number
 async function loadState(): Promise<State> {
   try {
-    const result = await shinkaiSqliteQueryExecutor({
+    const result = await hanzoSqliteQueryExecutor({
       query: `
       SELECT last_update_id FROM bot_state WHERE id = 1;
       `
@@ -52,7 +52,7 @@ async function loadState(): Promise<State> {
     console.log( { result: JSON.stringify(result )});
     return { lastUpdateId: parseInt(result.result[0].last_update_id, 10) };
   } catch (err) {
-    const result = await shinkaiSqliteQueryExecutor({
+    const result = await hanzoSqliteQueryExecutor({
       query: `
       INSERT INTO bot_state (id, last_update_id) values (1, '0'); ;
       `
@@ -66,7 +66,7 @@ async function loadState(): Promise<State> {
 async function saveState(state: State) {
   console.log( { saveState: JSON.stringify(state )});
 
-  await shinkaiSqliteQueryExecutor({
+  await hanzoSqliteQueryExecutor({
     query: `
     UPDATE bot_state 
     SET last_update_id = ?
@@ -78,7 +78,7 @@ async function saveState(state: State) {
 
 // Update appendChatHistory to convert boolean to string
 async function appendChatHistory(username: string, message: string, isBot: boolean) {
-  await shinkaiSqliteQueryExecutor({
+  await hanzoSqliteQueryExecutor({
     query: `
     INSERT INTO chat_history (username, message, is_bot)
     VALUES (?, ?, ?)
@@ -168,7 +168,7 @@ async function main(BOT_TOKEN: string, CUSTOM_RULES: string | undefined) {
       if (data.messages.length > 0) {
         try {
           // Get chat history from database
-          const chatHistoryResult = await shinkaiSqliteQueryExecutor({
+          const chatHistoryResult = await hanzoSqliteQueryExecutor({
             query: `
             SELECT timestamp, is_bot, message 
             FROM chat_history 
@@ -209,7 +209,7 @@ ${rules}
 </FORMAT>
           `;
           console.log(prompt);
-          const response = await shinkaiLlmPromptProcessor({
+          const response = await hanzoLlmPromptProcessor({
             prompt: prompt,
             format: "text"
           });
